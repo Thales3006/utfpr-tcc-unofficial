@@ -1,0 +1,13 @@
+[package]
+name = "utfpr-tcc-unofficial"
+version = "0.1.0"
+entrypoint = "src/lib.typ"
+categories = [ "thesis", "paper", "report" ]
+disciplines = [ ]
+description = "This is an UNOFFICIAL TCC template for UTFPR (Universidade Tecnológica Federal do Paraná). Some UTFPR standards could have been updated over the years, use it at your own risk."
+compiler = "0.13.0"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
