@@ -1,5 +1,4 @@
 #import "@local/utfpr-tcc-unofficial:0.1.0": * 
-#import "@preview/min-article:0.1.0": appendix, annex
 
 #show: template.with(  
   title: [
@@ -418,9 +417,3 @@ Parte final do texto, na qual se apresentam as conclusões do trabalho acadêmic
 
 #bibliography(title: none,"references.bib",style: "associacao-brasileira-de-normas-tecnicas", full: true)
 ]
-
-#appendix(include("assets/appendix1.typ"))
-
-#appendix(include("assets/appendix2.typ"))
-
-#annex(include("assets/annex1.typ"))
