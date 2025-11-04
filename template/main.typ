@@ -29,7 +29,7 @@
   abstract: [
     O resumo deve ressaltar de forma sucinta o conteúdo do trabalho, incluindo justificativa, objetivos, metodologia, resultados e conclusão. Deve ser redigido em um único parágrafo, justificado, contendo de 150 até 500 palavras.
     
-    Evitar incluir citações, fórmulas, equações e símbolos no resumo. A referência é elemento opcional em trabalhos acadêmicos, sendo que na UTFPR adotamos por não incluí-la nos resumos contidos nos próprios trabalhos. As palavras-chave e as #emph[keywords] são grafadas em inicial minúscula quando não forem nome próprio ou nome científico e separados por ponto e vírgula.
+    Evitar incluir citações, fórmulas, equações e símbolos no resumo. A referência é elemento opcional em trabalhos acadêmicos, sendo que na UTFPR adotamos por não incluí-la nos resumos contidos nos próprios trabalhos. As palavras-chave e as _keywords_ são grafadas em inicial minúscula quando não forem nome próprio ou nome científico e separados por ponto e vírgula.
   ],
   abstract-foreign: [
     Seguir o mesmo padrão do resumo, com a tradução do texto do resumo e referência, se houver, para a língua estrangeira (língua inglesa).
@@ -223,7 +223,9 @@ Para quadros que ocupam mais de uma folha, não é necessária nenhuma sinaliza�
 Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
 
 == Tabelas
-Deve-se seguir tal padrão em todo o trabalho, constando também na lista de tabelas, separada da lista de ilustrações. As tabelas se diferenciam dos quadros por não apresentarem os fechamentos laterais #footnote[Para as regras gerais de apresentação das tabelas consultar: IBGE (Instituto Brasileiro de Geografia e Estatística). *Normas para Apresentação Tabular.* 3. ed. Rio de Janeiro: IBGE, 1993. Disponível em: #link("http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf")].
+Deve-se seguir tal padrão em todo o trabalho, constando também na lista de tabelas, separada da lista de ilustrações. As tabelas se diferenciam dos quadros por não apresentarem os fechamentos laterais #footnote[
+  Para as regras gerais de apresentação das tabelas consultar: IBGE (Instituto Brasileiro de Geografia e Estatística). *Normas para Apresentação Tabular.* 3. ed. Rio de Janeiro: IBGE, 1993. Disponível em: #link("http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf")
+].
 
 Modelo de formatação de tabelas (prevalecem informações numéricas).
 
