@@ -162,6 +162,22 @@ show outline.entry: it => {
 }
 
 // ===============================================
+// Citations
+// ===============================================
+
+set cite(style: "associacao-brasileira-de-normas-tecnicas")
+set bibliography(
+  title: none, 
+  style: "associacao-brasileira-de-normas-tecnicas",
+)
+show bibliography: it => {
+  align(heading("Referências"),center)
+  linebreak()
+  set par(leading: 0.5em)
+  it
+}
+
+// ===============================================
 // Lists
 // ===============================================
 

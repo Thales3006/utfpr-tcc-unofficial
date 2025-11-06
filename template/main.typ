@@ -377,14 +377,4 @@ Todos as obras efetivamente citadas no trabalho deverão constar na lista de ref
 
 Parte final do texto, na qual se apresentam as conclusões do trabalho acadêmico, usualmente denominada Considerações Finais. Pode ser usada outra denominação similar que indique a conclusão do trabalho.
 
-#align(center)[
-  #set heading(numbering: none)
-  = Referências
-]
-\
-
-#[
-#set par(leading: 0.5em)
-
-#bibliography(title: none, "references.bib",style: "associacao-brasileira-de-normas-tecnicas", full: true)
-]
+#bibliography("references.bib", full: true)
