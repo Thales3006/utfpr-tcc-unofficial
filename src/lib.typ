@@ -326,7 +326,7 @@ if outline-figure {
   outline(
     title: [#linguify("outline-figure") \ \ \ ],
     target: figure.where(kind: image)
-    .or(figure.where(kind: photograph))
+    .or(figure.where(kind: "photograph"))
     .or(figure.where(kind: "frame"))
     .or(figure.where(kind: "graph")),
   )
