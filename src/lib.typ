@@ -37,7 +37,6 @@ set-database(lang-data)
 // ===============================================
 set page(
   margin: (left: 3cm, right: 2cm, top: 3cm, bottom: 2cm),
-  numbering: "1",
   number-align: top+right,
 )
 
@@ -62,7 +61,7 @@ show heading : it =>{
     size:12pt,
     weight: if it.level < 3 {700} else {0}
   )
-  if it.level == 1 {upper(it)}
+  if it.level == 1 {pagebreak();upper(it)}
   else if it.level == 4 {underline(it)}
   else if it.level == 5 {emph(it)}
   else {it}
@@ -178,6 +177,24 @@ show bibliography: it => {
 }
 
 // ===============================================
+// Quotation
+// ===============================================
+
+show quote.where(block: true): it => {
+  set text(size: 10pt)
+  set par(
+    leading: 0.5em, 
+    first-line-indent: (amount:4cm, all:true),
+    hanging-indent: 4cm
+  )
+
+  if it.attribution == none {
+    panic("Block quotes need attribution parameter to not be none")
+  }
+  par(it.body + [ ] + it.attribution + ".")
+}
+
+// ===============================================
 // Lists
 // ===============================================
 
@@ -290,70 +307,62 @@ if abstract-foreign != none or keywords-foreign != none {
 
 if outline-figure {
   //Elemento opcional. São ilustrações: figuras, fotografias, gráficos, quadros, entre outros. Organizá-la por ordem de ocorrência no texto. Na UTFPR sugere-se adotar listas próprias, conforme a natureza da ilustração, a partir da existência de 3 itens da mesma espécie.
-  page(
-    numbering: none,
-    [
-      #set par(
-        justify: true, 
-        first-line-indent: 0cm,
-        leading: 0.66em,
-        spacing: 1.5em,
-      )
-      
-      #outline(
-      title: [LISTA DE ILUSTRAÇÕES \ \ \ ],
-      target: figure.where(kind: image)
-      .or(figure.where(kind: "photograph"))
-      .or(figure.where(kind: "frame"))
-      .or(figure.where(kind: "graph")),
-    )]
+
+  set par(
+    justify: true, 
+    first-line-indent: 0cm,
+    leading: 0.66em,
+    spacing: 1.5em,
   )
+      
+  outline(
+    title: [LISTA DE ILUSTRAÇÕES \ \ \ ],
+    target: figure.where(kind: image)
+    .or(figure.where(kind: "photograph"))
+    .or(figure.where(kind: "frame"))
+    .or(figure.where(kind: "graph")),
+  )
+
 }
 
 if outline-table {
   //Elemento opcional. As tabelas se diferenciam dos quadros por apresentaram, predominantemente, informações numéricas (sem os fechamentos laterais), enquanto os quadros apresentam, predominantemente, informações textuais (com os fechamentos laterais). Deve ser apresentada em lista própria, de acordo com a ordem no texto, com cada item designado por seu nome específico, acompanhado do respectivo número da página.
-  page(
-    numbering: none,
-    [
-    #set par(
+
+  set par(
       justify: true, 
       first-line-indent: 0cm,
       leading: 0.66em,
       spacing: 1.5em,
-    )
-    #outline(
-      title: [LISTA DE TABELAS \ \ \ ],
-      target: figure.where(kind: table),
-    )]
+  )
+  outline(
+    title: [LISTA DE TABELAS \ \ \ ],
+    target: figure.where(kind: table),
   )
 }
 
 
 if abbreviations != none {
   //Elemento opcional. Relação em ordem alfabética das abreviaturas e siglas presentes no texto, seguidas do respectivo significado
-  page(
-    numbering: none,
-    [
-    #set align(left)
-    #align(center)[#strong[LISTA DE ABREVIATURAS E SIGLAS]] \
-    
-  
-    #grid(
-      columns: (15.48%, 84.52%), align: (auto, auto,), row-gutter: 5pt,
-      
-      ..abbreviations
-    )
+
+  set align(left)
+  align(center, heading(outlined: false, numbering: none)[
+    LISTA DE ABREVIATURAS E SIGLAS
   ])
+  
+  grid(
+    columns: (15.48%, 84.52%), 
+    align: (auto, auto,), 
+    row-gutter: 5pt,
+    ..abbreviations
+  )
 }
 
-page(
-  numbering: none,
-  outline(title: [Sumário \ \ ])
-)
+outline(title: [Sumário \ \ ])
+
+set page(numbering: "1")
 
 body
 }
-
 
 #let default_figure = figure
 #let figure( 
