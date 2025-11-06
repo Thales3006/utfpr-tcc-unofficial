@@ -162,20 +162,6 @@ show outline.entry: it => {
 }
 
 // ===============================================
-// Citations
-// ===============================================
-set cite(style: "associacao-brasileira-de-normas-tecnicas")
-
-let normalcase(content) = lower(content.text).replace(
-  regex(" \w|^\w"), m=>upper(m.text)
-)
-
-show cite.where(form:"prose") : it => {
-  show regex("[^'et al']+") : normalcase
-  it
-}
-
-// ===============================================
 // Lists
 // ===============================================
 
