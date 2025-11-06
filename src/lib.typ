@@ -72,7 +72,8 @@ show heading : it =>{
 // ===============================================
 set figure.caption(position: top,separator: " - ")
 show figure: set text(size: 10pt)
-show figure.caption: set text(weight: 700)
+show figure.caption: set text(size: 10pt, weight: 700)
+show figure.caption: set par(spacing: 0.5em, leading: 0.5em)
 
 // ===============================================
 // Tables
@@ -371,22 +372,23 @@ body
   note: none,
   ..figure-arguments
 ) = default_figure(
-      default_figure(
-        default_figure(
-          body,
-          kind: "nested",
-          numbering: none,
-          caption: if note!=none{ default_figure.caption(
-            linguify("note") + ": " + note, 
-            position: bottom
-          )},
-        ),
-        kind: "nested",
-        numbering: none,
-        caption: if source!=none{default_figure.caption(
+    block(body + {
+      set par(spacing: 0.5em, leading: 0.5em)
+      pad(y:-0.5em)[]
+      if note!=none{ 
+        default_figure.caption(
+          linguify("note") + ": " + note, 
+          position: bottom
+        )
+      }
+      if source!=none{
+        default_figure.caption(
           linguify("source") + ": " + source, 
           position: bottom
-        )}else{panic("Every figure needs a source. Try using `source: [your source (year)]` in the parameters")},
-      ),
-      ..figure-arguments
-    )
+        )
+      } else {
+        panic("Every figure needs a source. Try using `source: [your source (year)]` in the parameters")
+      }
+    }),
+    ..figure-arguments
+  )
