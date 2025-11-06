@@ -2,10 +2,10 @@
 
 #show: template.with(  
   title: [
-    O TÍTULO DEVE SER CLARO E PRECISO: SUBTÍTULO (SE HOUVER) DEVE SER PRECEDIDO DE DOIS PONTOS CONFIRMANDO SUA VINCULAÇÃO AO TÍTULO
+    O título deve ser claro e preciso: subtítulo (se houver) deve ser precedido de dois pontos confirmando sua vinculação ao título
   ],
   title-foreign: [
-    Título traduzido título traduzido título traduzido título traduzido título traduzido título traduzido título traduzido título traduzido título traduzido título traduzido título traduzido
+    Título traduzido título traduzido
   ],
 
   lang: "pt",
@@ -16,7 +16,12 @@
   year: [ANO DA ENTREGA],
 
   description: [
-      Trabalho de conclusão de curso de graduação/Dissertação/Tese apresentada como requisito para obtenção do título de Bacharel/Licenciado/Tecnólogo/Mestre/Doutor em Nome do Curso/Programa da Universidade Tecnológica Federal do Paraná (UTFPR).
+      Trabalho de conclusão de curso de 
+      graduação/Dissertação/Tese apresentada 
+      como requisito para obtenção do título de 
+      Bacharel/Licenciado/Tecnólogo/Mestre/Doutor 
+      em Nome do Curso/Programa da 
+      Universidade Tecnológica Federal do Paraná (UTFPR).
     
       Orientador(a): Nome completo e por extenso.
 
@@ -27,12 +32,24 @@
   keywords-foreign: ([word 1], [word 2], [word 3], [word 4]),
   
   abstract: [
-    O resumo deve ressaltar de forma sucinta o conteúdo do trabalho, incluindo justificativa, objetivos, metodologia, resultados e conclusão. Deve ser redigido em um único parágrafo, justificado, contendo de 150 até 500 palavras.
-    
-    Evitar incluir citações, fórmulas, equações e símbolos no resumo. A referência é elemento opcional em trabalhos acadêmicos, sendo que na UTFPR adotamos por não incluí-la nos resumos contidos nos próprios trabalhos. As palavras-chave e as _keywords_ são grafadas em inicial minúscula quando não forem nome próprio ou nome científico e separados por ponto e vírgula.
+    O resumo deve ressaltar de forma sucinta
+    o conteúdo do trabalho, incluindo 
+    justificativa, objetivos, metodologia, 
+    resultados e conclusão. 
+    Deve ser redigido em um único parágrafo, 
+    contendo de 150 até 500 palavras.
+    Evitar incluir citações, fórmulas, equações 
+    e símbolos no resumo. 
+    As palavras-chave e as _keywords_ são 
+    grafadas em inicial minúscula quando não
+    forem nome próprio ou nome científico e 
+    separados por ponto e vírgula.
   ],
   abstract-foreign: [
-    Seguir o mesmo padrão do resumo, com a tradução do texto do resumo e referência, se houver, para a língua estrangeira (língua inglesa).
+    Seguir o mesmo padrão do resumo, 
+    com a tradução do texto do resumo e 
+    referência, se houver, 
+    para a língua estrangeira.
   ],
 
   outline-figure: true,
@@ -51,46 +68,28 @@
 Parte inicial do texto, na qual devem constar o tema e a delimitação do assunto tratado, objetivos da pesquisa e outros elementos necessários para situar o tema do trabalho. 
 
 /*
-Após o início de uma seção, recomenda-se a inserção de um texto ou, no mínimo, uma nota explicativa sobre a seção iniciada. Evitar, por exemplo:
+Após o início de uma seção, recomenda-se a inserção de um texto ou, no mínimo, uma nota explicativa sobre a seção iniciada. Evitar colocar outra seção na sequência, por exemplo:
 
 = Introdução
-
 = Contextualização
-
 = Memorial da pesquisa
 */
-
-== Paginação
-Todas as folhas do trabalho, a partir da folha de rosto, devem ser contadas sequencialmente, mas não numeradas. A numeração deve ser inserida à partir da primeira folha da parte textual (Introdução), em algarismos arábicos, no canto superior direito da folha. Havendo apêndices e anexos, as suas folhas devem ser paginadas de maneira contínua.
-
-== Exemplos de utilização de numeração progressiva
-Nos títulos com indicativo numérico não se utilizam pontos, hífen, travessão, ou qualquer sinal após o indicativo de seção ou de título.
-
-A numeração progressiva para as seções do texto deve ser adotada para evidenciar a sistematização do conteúdo do trabalho.
-
-Destacam-se gradativamente os títulos das seções, utilizando-se tipograficamente com recursos como letra maiúscula, negrito, itálico ou sublinhado.
-
-No sumário, os títulos devem aparecer de forma idêntica ao texto.
-
-Ver os exemplos na folha seguinte:
 
 = Seção primária (caixa alta e negrito)
 
 As seções primárias devem iniciar *sempre* em páginas distintas. Entre uma seção e outra sempre haverá um texto.
 
-Texto justificado, com recuo especial na primeira linha de 1,5 cm. Não utilizar tab (1,25 cm). Os títulos das seções devem ser separados do texto que os precede por 1 (um) espaço (1,5 cm).
-
 == Seção secundária (negrito)
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
+#lorem(20)
 
 === Seção terciária (sem negrito)
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
+#lorem(20)
 
 ==== Seção quaternária (sublinhado)
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
+#lorem(20)
 
 ===== Seção quinária (itálico)
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
+#lorem(20)
 
 = Desenvolvimento
 
@@ -98,68 +97,38 @@ Parte principal do trabalho, que contém a exposição ordenada e pormenorizada 
 
 Deve-se utilizar sempre a terceira pessoa do singular na elaboração do texto, mantendo-se a forma impessoal.
 
-== Regras gerais de apresentação
-Constituem-se como padrão para apresentação de trabalhos acadêmicos:
-
-- Tamanho da fonte: Arial ou Times New Roman, tamanho 12. Deve-se utilizar apenas um dos tipos escolhidos em todo o trabalho. Fonte tamanho 10 para citações de mais de três linhas, notas de rodapé e legendas, corpo e fonte das ilustrações e tabelas e paginação.
-
-- Formato do título: o título do trabalho, na capa e na folha de rosto, deve aparecer em CAIXA ALTA, negrito, centralizado e fonte tamanho 12. Havendo subtítulo, este deve ser precedido por dois pontos, escrito também em CAIXA ALTA, negrito e sem ponto final;
-
-- Parágrafo: com recuo na primeira linha de 1,5 cm, justificado, sem espaçamento anterior ou posterior.
-
-== Margens
-Utilizar margens esquerda e superior de 3 cm; e margens direita e inferior de 2 cm; Tamanho do papel: A4; Cabeçalho e rodapé: 1,25 cm.
-
-== Espaçamento
-As notas, as referências e a natureza do trabalho devem ser digitadas em espaço simples; Todo o texto deve ser formatado com espaço de 1,5 cm entre linhas (sem espaçamento antes/depois).
-
-As citações com mais de três linhas (longas) são em espaço simples e com recuo de 4 cm da margem esquerda. “As referências devem ser elaboradas em espaço simples, alinhadas à margem esquerda do texto e separadas entre si por uma linha em branco de espaço simples”. (ABNT, 2018)@abnt6023.
-
 == Ilustrações
-São ilustrações: *figuras, quadros, gráficos, fotografias*, retratos, desenhos, gravuras, imagens, fluxogramas, organogramas, esquemas, mapas, plantas e *diferenciam-se das tabelas*. As ilustrações devem ser inseridas o mais próximo possível do texto a que se refere, mas mantendo um espaço (1,5 cm) de separação.
-
-Qualquer que seja o tipo de ilustração, sua identificação deve ser posicionada na parte *superior*, precedida da palavra designativa, seguida de seu número de ordem de ocorrência no texto, em algarismos arábicos, do respectivo título e/ou legenda. A fonte deve ser tamanho 1
-
-Após a legenda, deve-se apresentar ilustração e em seguida citar a fonte de onde foi retirada a ilustração, exemplo: Fonte: Autor (data), bem como deve-se referenciá-la, de forma completa, na seção Referências.
+São ilustrações: *figuras, quadros, gráficos, fotografias* e diferenciam-se das *tabelas*.
 
 A seguir, um modelo de formatação de figura:
 
 #figure(
-  image("media/imagem1.png", width: 70%), 
+  image("media/imagem1.png", width: 50%), 
   caption: [As dimensões curriculares de pré-escolar],
   source: [Centro Social de Azurva (2020)]
 )
 
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
+Todas as figuras devem ser referenciadas em texto, como feito com a @glandulas nesse trecho escrito.
 
 #figure(
-  image("media/imagem2.png", width: 80%), 
+  image("media/imagem2.png", width: 50%), 
   caption: [Glândulas exócrinas e endócrinas],
   source: [Adaptado de Ross e Pawlina (2018, p. 144)]
-)
+)<glandulas>
+
+*Atenção:* As fontes das ilustrações e tabelas também deverão constar na lista de referências, ou indicar como Fonte: Autoria própria (ano), se for o caso.
 
 A seguir, um modelo de formatação de fotografia:
 
 #figure(
   kind: "photograph",
   supplement: [Fotografia],
-  image("media/imagem3.png", width: 70%), 
+  image("media/imagem3.png", width: 50%), 
   caption: [Entrada da antiga Biblioteca da UTFPR Campus Ponta Grossa],
   source:[Autoria própria (2014)],
 )
 
-*Atenção:* As fontes das ilustrações e tabelas também deverão constar na lista de referências, ou indicar como Fonte: Autoria própria (ano), se for o caso. Na UTFPR adotou-se negrito e centralizado nas legendas e fonte das ilustrações e tabelas.
-
-#figure(
-  kind: "photograph",
-  supplement: [Fotografia],
-  image("media/imagem4.png", width: 80%), 
-  caption: [Entrada da Biblioteca Mario Vargas Llosa, Lima (Peru)],
-  source:[Autoria própria (2019)],
-)
-
 A seguir, um modelo de formatação de gráfico:
-
 
 //===============================
 // Bibliotecas de geração de gráfico
@@ -175,7 +144,7 @@ A seguir, um modelo de formatação de gráfico:
 
   cetz.canvas({chart.piechart( 
     (17, 12, 25),
-    radius: 3,
+    radius: 2.5,
     slice-style: (gray, blue, orange),
     inner-label: (content: "%",))
   }),
@@ -183,9 +152,6 @@ A seguir, um modelo de formatação de gráfico:
 caption: [Estatística de empréstimos em janeiro de 2019],
 source: [UTFPR (2019)],
 )
-
-
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
 
 Modelo de formatação de quadros (prevalecem informações textuais).
 
@@ -218,16 +184,12 @@ Modelo de formatação de quadros (prevalecem informações textuais).
   source: [Fleury e Fleury (2018)],
 )
 
-Para quadros que ocupam mais de uma folha, não é necessária nenhuma sinalização.
-
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
-
 == Tabelas
-Deve-se seguir tal padrão em todo o trabalho, constando também na lista de tabelas, separada da lista de ilustrações. As tabelas se diferenciam dos quadros por não apresentarem os fechamentos laterais #footnote[
+As tabelas se diferenciam dos quadros por não apresentarem os fechamentos laterais 
+#footnote[
   Para as regras gerais de apresentação das tabelas consultar: IBGE (Instituto Brasileiro de Geografia e Estatística). *Normas para Apresentação Tabular.* 3. ed. Rio de Janeiro: IBGE, 1993. Disponível em: #link("http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf")
-].
-
-Modelo de formatação de tabelas (prevalecem informações numéricas).
+]
+e prevalecerem informações numéricas.
 
 #figure(
   table(
@@ -274,13 +236,7 @@ Modelo de formatação de tabelas (prevalecem informações numéricas).
 )
 
 
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
-
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
-
-Texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto, texto.
-
-Para tabelas que ocupam mais de uma folha: deve-se repetir a legenda, na primeira parte não apresentar a linha de fechamento e inserir as sinalizações: continua, continuação (quando ocupar mais de 2 folhas) e conclusão.
+/*Para tabelas que ocupam mais de uma folha: deve-se repetir a legenda, na primeira parte não apresentar a linha de fechamento e inserir as sinalizações: continua, continuação (quando ocupar mais de 2 folhas) e conclusão.
 
 #figure(
   table(
@@ -339,42 +295,34 @@ Para tabelas que ocupam mais de uma folha: deve-se repetir a legenda, na primeir
   caption: [Situação da educação brasileira em 2002 - Ensino Médio],
   source: [Brasil (2014)],
   note: [As notas (quando houver) deverão ser apresentadas antes da apresentação da fonte.],
-)
+)*/
 
 
 
 == Citações
-É fundamental nesta etapa a ética e a honestidade intelectual, atribuindo autoria a quem realmente contribuiu para o desenvolvimento do estudo em questão. Neste processo usam-se as citações, definidas como “menção de uma informação extraída de outra fonte”. @abnt10520[p.~1] #footnote[Para as regras gerais de apresentação das citações consultar: *ABNT NBR 10520/2002:* Informação e Documentação - Citações Em Documentos - Apresentação.];.
+É fundamental nesta etapa a ética e a honestidade intelectual, atribuindo autoria a quem realmente contribuiu para o desenvolvimento do estudo em questão. 
 
-A transcrição, literal ou não, seguida da referência adequada, torna-se uma citação como classificada por normas. Entretanto, a mesma transcrição ou cópia, sem atender os ditames da norma, torna-se um plágio. O plágio é passível de restrições legais e penais. A Lei n. 9.610, de 19/02/1998, regula os direitos autorais no Brasil, prevendo as sanções legais pertinentes; já o Código Penal, no seu Artigo 184, aponta as sanções penais.
+=== Exemplos:
 
-As citações curtas diretas, aquelas com até três linhas, aparecem diretamente no texto, destacadas entre aspas (“...”), precedidas ou sucedidas da indicação de autoria. #underline[Exemplo:]
+- Citação direta curta: o autor lembra, contudo, a análise precursora de #cite(<leonardbarton1998>, form: "prose", supplement: [p.~48]) sobre alguns “aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas”.
 
-O autor lembra, contudo, a análise precursora de #cite(<leonardbarton1998>, form: "prose", supplement: [p.~48]) sobre alguns “aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas”.
+- Citação direta curta: o autor lembra, contudo, a análise precursora sobre alguns #quote[ aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas] @leonardbarton1998.
 
-Quando a autoria for inserida entre parênteses, esta deverá ser apresentada em caixa alta, conforme no exemplo a seguir:
+- Citação direta longa (com mais de 3 linhas).
 
-O autor lembra, contudo, a análise precursora sobre alguns “aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas”. @leonardbarton1998.
-
-Exemplo de citação direta longa (com mais de 3 linhas):
-
-O contexto capacitante não significa necessariamente um espaço físico. Em vez disso, combina aspectos de espaço físico (como o projeto de um escritório ou operações de negócios dispersas), espaço virtual (e-mail, Intranets, teleconferências) e espaço mental (experiências, ideias e emoções compartilhadas). Acima de tudo, trata-se de uma rede de interações, determinada pela solicitude e pela confiança dos participantes. @vonKrogh2001.
-
-As citações das obras que possuírem até 3 autores deverão constar os 3 autores na citação. Já para as citações das obras que possuírem mais de 3 autores deverão constar apenas o nome do(a) primeiro(a) autor(a) seguido da palavra _et al_. (em itálico) que em latim significa: e outros.
-
-/*
-Quanto ao apud (palavra em latim que significa: citado por) recomendamos evitá-la ao máximo pois acredita-se que com os recursos informacionais disponíveis atualmente a maioria das obras estão acessíveis para consulta, seja através dos acervos das bibliotecas, ou mesmo por aquisição da obra necessária ao desenvolvimento do estudo. No caso da utilização do apud apresentá-lo sem itálico.
-
-Exemplo de citação de citação (uso do apud):
-
-No modelo serial de Gough (1972 apud NARDI, 1993), o ato de ler envolve um processamento serial que começa com a fixação ocular sobre o texto, prosseguindo da esquerda para a direita de forma linear.
-*/
-
-Todos as obras efetivamente citadas no trabalho deverão constar na lista de referências. *Obras que não constarem citadas no texto não deverão constar nesta lista.*
-
+#quote(attribution: [@vonKrogh2001], block: true)[
+  O contexto capacitante não significa necessariamente um espaço físico. Em vez disso, combina aspectos de espaço físico (como o projeto de um escritório ou operações de negócios dispersas), espaço virtual (e-mail, Intranets, teleconferências) e espaço mental (experiências, ideias e emoções compartilhadas). Acima de tudo, trata-se de uma rede de interações, determinada pela solicitude e pela confiança dos participantes
+]
 
 = Conclusão (ou considerações finais)
 
 Parte final do texto, na qual se apresentam as conclusões do trabalho acadêmico, usualmente denominada Considerações Finais. Pode ser usada outra denominação similar que indique a conclusão do trabalho.
 
-#bibliography("references.bib", full: true)
+/*
+Todos as obras efetivamente citadas 
+no trabalho deverão constar na lista de referências. 
+*Obras que não constarem citadas 
+no texto não deverão constar nesta lista.*
+*/
+
+#bibliography("references.bib")
