@@ -358,7 +358,7 @@ O autor lembra, contudo, a análise precursora sobre alguns “aspectos limitant
 
 Exemplo de citação direta longa (com mais de 3 linhas):
 
-O contexto capacitante não significa necessariamente um espaço físico. Em vez disso, combina aspectos de espaço físico (como o projeto de um escritório ou operações de negócios dispersas), espaço virtual (e-mail, Intranets, teleconferências) e espaço mental (experiências, idéias e emoções compartilhadas). Acima de tudo, trata-se de uma rede de interações, determinada pela solicitude e pela confiança dos participantes. @vonKrogh2001.
+O contexto capacitante não significa necessariamente um espaço físico. Em vez disso, combina aspectos de espaço físico (como o projeto de um escritório ou operações de negócios dispersas), espaço virtual (e-mail, Intranets, teleconferências) e espaço mental (experiências, ideias e emoções compartilhadas). Acima de tudo, trata-se de uma rede de interações, determinada pela solicitude e pela confiança dos participantes. @vonKrogh2001.
 
 As citações das obras que possuírem até 3 autores deverão constar os 3 autores na citação. Já para as citações das obras que possuírem mais de 3 autores deverão constar apenas o nome do(a) primeiro(a) autor(a) seguido da palavra _et al_. (em itálico) que em latim significa: e outros.
 

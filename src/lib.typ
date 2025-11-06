@@ -294,7 +294,7 @@ if outline-figure {
       #set par(
         justify: true, 
         first-line-indent: 0cm,
-        leading: 0.5em,
+        leading: 0.66em,
         spacing: 1.5em,
       )
       
@@ -316,10 +316,9 @@ if outline-table {
     #set par(
       justify: true, 
       first-line-indent: 0cm,
-      leading: 0.5em,
+      leading: 0.66em,
       spacing: 1.5em,
     )
-    
     #outline(
       title: [LISTA DE TABELAS \ \ \ ],
       target: figure.where(kind: table),
