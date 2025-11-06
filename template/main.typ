@@ -266,10 +266,10 @@ As tabelas se diferenciam dos quadros por não apresentarem os fechamentos later
 Parte final do texto, na qual se apresentam as conclusões do trabalho acadêmico, usualmente denominada Considerações Finais. Pode ser usada outra denominação similar que indique a conclusão do trabalho.
 
 /*
-Todos as obras efetivamente citadas 
-no trabalho deverão constar na lista de referências. 
-*Obras que não constarem citadas 
-no texto não deverão constar nesta lista.*
+  Todos as obras efetivamente citadas 
+  no trabalho deverão constar na lista de referências. 
+  Obras que não constarem citadas 
+  no texto não deverão constar nesta lista.
 */
 
 #bibliography("references.bib")
