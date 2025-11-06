@@ -386,7 +386,7 @@ body
         caption: if source!=none{default_figure.caption(
           linguify("source") + ": " + source, 
           position: bottom
-        )},
+        )}else{panic("Every figure needs a source. Try using `source: [your source (year)]` in the parameters")},
       ),
       ..figure-arguments
     )
