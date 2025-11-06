@@ -188,8 +188,7 @@ Modelo de formatação de quadros (prevalecem informações textuais).
 As tabelas se diferenciam dos quadros por não apresentarem os fechamentos laterais 
 #footnote[
   Para as regras gerais de apresentação das tabelas consultar: IBGE (Instituto Brasileiro de Geografia e Estatística). *Normas para Apresentação Tabular.* 3. ed. Rio de Janeiro: IBGE, 1993. Disponível em: #link("http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf")
-]
-e prevalecerem informações numéricas.
+].
 
 #figure(
   table(
@@ -232,72 +231,20 @@ e prevalecerem informações numéricas.
     [21,9],
   ), 
   caption: [Desempenho dos alunos na prova de conhecimentos específicos],
+  note: [As notas (quando houver) deverão ser apresentadas antes da apresentação da fonte.],
   source: [INEP (2016)],
 )
 
-
-/*Para tabelas que ocupam mais de uma folha: deve-se repetir a legenda, na primeira parte não apresentar a linha de fechamento e inserir as sinalizações: continua, continuação (quando ocupar mais de 2 folhas) e conclusão.
-
-#figure(
-  table(
-    columns: (1fr, 1fr, 1fr, 1fr),
-
-    [], 
-    [Taxa de repetência no \ Ensino Médio (%)],   
-    [Taxa de evasão no \ Ensino Médio (%)], 
-    [Taxa de\ analfabetismo da \ população de 15 a 17],
-    
-    [*Sul*], 
-    […], 
-    […], 
-    […], 
-    
-    [Paraná], 
-    [19,3], 
-    [8], 
-    [1,4], 
-    
-    [Rio Grande do Sul], 
-    [23,3], 
-    [7,7], 
-    [1,1], 
-    
-    [Santa Catarina], 
-    [20,6], 
-    [9,5], 
-    [1,4],
-
-    [*Sudeste*], 
-    [...], 
-    [...], 
-    [...], 
-    
-    [Espírito Santo], 
-    [17,4], 
-    [5,2], 
-    [2,2], 
-    
-    [Minas Gerais], 
-    [14,2], 
-    [7,2], 
-    [2,1], 
-    
-    [Rio de Janeiro], 
-    [22,4], 
-    [6,5], 
-    [1,3], 
-    
-    [São Paulo], 
-    [11,5], 
-    [7,6], 
-    [0,8],
-  ), 
-  caption: [Situação da educação brasileira em 2002 - Ensino Médio],
-  source: [Brasil (2014)],
-  note: [As notas (quando houver) deverão ser apresentadas antes da apresentação da fonte.],
-)*/
-
-
+/* ============================ /*
+  WORK IN PROGRESS:
+    Para tabelas que ocupam mais de uma folha: 
+    deve-se repetir a legenda, 
+    na primeira parte não apresentar a linha de
+    fechamento e inserir as sinalizações: 
+    continua, 
+    continuação (quando ocupar mais de 2 folhas)
+    e conclusão.
+*/ ============================ */
 
 == Citações
 É fundamental nesta etapa a ética e a honestidade intelectual, atribuindo autoria a quem realmente contribuiu para o desenvolvimento do estudo em questão. 
