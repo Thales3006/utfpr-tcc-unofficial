@@ -7,15 +7,13 @@
 
 <h2 align="center">English</h2>
 
----
-
 <center>
   UTFPR TCC template made by students for students
 </center>
 
 ## Quick start
 
-All the arguments bellow have default values
+All the arguments below have default values, hence, optionals.
 
 ```typst
 #import "@local/utfpr-tcc-unofficial:0.1.0": * 
@@ -31,7 +29,7 @@ All the arguments bellow have default values
   city: [city],
   year: [year],
 
-  description: [That litle block on the second page.],
+  description: [That little block on the second page.],
 
   keywords: ([word 1], [word 2], [word 3], [word 4]),
   keywords-foreign: ([palavra 1], [palavra 2], [palavra 3], [palavra 4]),
@@ -60,28 +58,17 @@ It's an open source project designed for anyone that wants to contribute
 be able to, especially if the standard gets updated, 
 some feature is incorrect or missing.
 
-## More Information
-
-There are no manuals available for this template at the moment, please consider contributing if possible.
-
-<center>
-  UTFPR TCC template made by students for students
-</center>
-
-<center>
-
-Modelo UTFPR TCC criado por estudantes para estudantes
-</center>
-
 ---
 
 <h2 align="center">Portuguese</h2>
 
----
+<center>
+  Modelo UTFPR TCC criado por estudantes para estudantes
+</center>
 
 ## Início rápido
 
-Todos os argumentos abaixo possuem valores padrão
+Todos os argumentos abaixo possuem valores padrão, portanto, opcionais.
 
 ```typst
 #import "@local/utfpr-tcc-unofficial:0.1.0": * 
@@ -120,12 +107,8 @@ Todos os argumentos abaixo possuem valores padrão
 ## Descrição
 
 Um modelo para TCC (Trabalho de Conclusão de Curso) UTFPR
-criado por estudantes para estudantes, com o objetivo de facilitar a produção de TCCs no typst.
+criado por estudantes para estudantes, com o objetivo de facilitar a produção de TCCs no Typst.
 Este é um modelo não oficial, sujeito a erros.
 Trata-se de um projeto de código aberto, criado para que qualquer pessoa que 
 deseje contribuir possa fazê-lo, especialmente se o padrão for atualizado,
 alguma funcionalidade estiver incorreta ou ausente.
-
-## Mais Informações
-
-Não há manuais disponíveis para este modelo no momento. Considere contribuir, se possível.
