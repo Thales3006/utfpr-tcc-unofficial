@@ -122,7 +122,6 @@ A seguir, um modelo de formatação de fotografia:
 
 #figure(
   kind: "photograph",
-  supplement: [Fotografia],
   image("media/imagem3.png", width: 50%), 
   caption: [Entrada da antiga Biblioteca da UTFPR Campus Ponta Grossa],
   source:[Autoria própria (2014)],
@@ -140,7 +139,6 @@ A seguir, um modelo de formatação de gráfico:
 
 #figure(
   kind: "graph",
-  supplement: [Gráfico],
 
   cetz.canvas({chart.piechart( 
     (17, 12, 25),
@@ -157,8 +155,6 @@ Modelo de formatação de quadros (prevalecem informações textuais).
 
 #figure(
   kind: "frame",
-  supplement: [Quadro],
-  
   table(
     columns: (1fr, 2fr), align: left,
      

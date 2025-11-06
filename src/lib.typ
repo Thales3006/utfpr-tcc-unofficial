@@ -75,6 +75,11 @@ show figure: set text(size: 10pt)
 show figure.caption: set text(size: 10pt, weight: 700)
 show figure.caption: set par(spacing: 0.5em, leading: 0.5em)
 
+show figure.where(kind: "photograph"): set figure(supplement: linguify("photograph"))
+show figure.where(kind: "graph"): set figure(supplement: linguify("graph"))
+show figure.where(kind: "frame"): set figure(supplement: linguify("frame"))
+
+
 // ===============================================
 // Tables
 // ===============================================
@@ -171,7 +176,7 @@ set bibliography(
   style: "associacao-brasileira-de-normas-tecnicas",
 )
 show bibliography: it => {
-  align(heading("Referências"),center)
+  align(heading(linguify("bibliography")),center)
   linebreak()
   set par(leading: 0.5em)
   it
@@ -211,7 +216,7 @@ page(numbering: none)[
   #grid(
     rows: 1fr,
 
-    strong(upper[UNIVERSIDADE TECNOLÓGICA FEDERAL DO PARANÁ]),
+    strong(upper(linguify("university"))),
     
     strong(upper(author)),
 
@@ -282,7 +287,9 @@ if abstract != none or keywords != none{
 
 if abstract-foreign != none or keywords-foreign != none { 
   page(numbering: none)[
-    #align(center, strong(upper[ABSTRACT])) \
+    #align(center, strong(upper(
+      linguify("abstract",lang: lang-foreign)
+    ))) \
     
     #set par(
       justify: true, 
@@ -317,9 +324,9 @@ if outline-figure {
   )
       
   outline(
-    title: [LISTA DE ILUSTRAÇÕES \ \ \ ],
+    title: [#linguify("outline-figure") \ \ \ ],
     target: figure.where(kind: image)
-    .or(figure.where(kind: "photograph"))
+    .or(figure.where(kind: photograph))
     .or(figure.where(kind: "frame"))
     .or(figure.where(kind: "graph")),
   )
@@ -336,7 +343,7 @@ if outline-table {
       spacing: 1.5em,
   )
   outline(
-    title: [LISTA DE TABELAS \ \ \ ],
+    title: [#linguify("outline-table") \ \ \ ],
     target: figure.where(kind: table),
   )
 }
@@ -347,7 +354,7 @@ if abbreviations != none {
 
   set align(left)
   align(center, heading(outlined: false, numbering: none)[
-    LISTA DE ABREVIATURAS E SIGLAS
+    #linguify("abbreviations") \ \
   ])
   
   grid(
@@ -358,7 +365,7 @@ if abbreviations != none {
   )
 }
 
-outline(title: [Sumário \ \ ])
+outline(title: [#linguify("outline") \ \ ])
 
 set page(numbering: "1")
 
