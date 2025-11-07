@@ -177,7 +177,7 @@ As tabelas se diferenciam dos quadros por não apresentarem os fechamentos later
 
 #figure(
   table(
-    columns: (20.01%, 20%, 20%, 20%, 20%), 
+    columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
 
     table.header(
       [Média], 
