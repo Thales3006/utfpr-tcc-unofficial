@@ -99,24 +99,13 @@ Deve-se utilizar sempre a terceira pessoa do singular na elaboração do texto, 
 
 == Ilustrações
 São ilustrações: *figuras, quadros, gráficos, fotografias* e diferenciam-se das *tabelas*.
-
-A seguir, um modelo de formatação de figura:
+Todas as figuras devem ser referenciadas ou referidas em texto, como feito com a @dimensoes nesse trecho escrito.
 
 #figure(
   image("media/imagem1.png", width: 50%), 
   caption: [As dimensões curriculares de pré-escolar],
   source: [#cite(<azurva2020>, form:"prose")]
-)
-
-Todas as figuras devem ser referenciadas em texto, como feito com a @glandulas nesse trecho escrito.
-
-#figure(
-  image("media/imagem2.png", width: 50%), 
-  caption: [Glândulas exócrinas e endócrinas],
-  source: [Adaptado de  #cite(<ross2018>, form: "prose", supplement: [p.~144]) ]
-)<glandulas>
-
-*Atenção:* As fontes das ilustrações e tabelas também deverão constar na lista de referências, ou indicar como Fonte: Autoria própria (ano), se for o caso.
+)<dimensoes>
 
 A seguir, um modelo de formatação de fotografia:
 
@@ -151,7 +140,7 @@ caption: [Estatística de empréstimos em janeiro de 2019],
 source: [#cite(<utfpr2020>, form: "prose")],
 )
 
-Modelo de formatação de quadros (prevalecem informações textuais).
+A seguir, um modelo de formatação de quadros (prevalecem informações textuais).
 
 #figure(
   kind: "frame",
@@ -201,30 +190,10 @@ As tabelas se diferenciam dos quadros por não apresentarem os fechamentos later
       [concluintes], 
       [ingressantes],
     ),
-    
-    [Matemática], 
-    [27,8], 
-    [22,5], 
-    [27,1], 
-    [22,4], 
-    
-    [Letras], 
-    [32,3], 
-    [31,5], 
-    [30,9], 
-    [26,5], 
-    
-    [Geografia], 
-    [38,4], 
-    [34,2], 
-    [34,6], 
-    [29,5], 
-    
-    [Ciências Biológicas], 
-    [26,4], 
-    [23,6], 
-    [26,6], 
-    [21,9],
+    [Matemática],          [27,8], [22,5], [27,1], [22,4], 
+    [Letras],              [32,3], [31,5], [30,9], [26,5], 
+    [Geografia],           [38,4], [34,2], [34,6], [29,5], 
+    [Ciências Biológicas], [26,4], [23,6], [26,6], [21,9],
   ), 
   caption: [Desempenho dos alunos na prova de conhecimentos específicos],
   note: [As notas (quando houver) deverão ser apresentadas antes da apresentação da fonte.],
@@ -260,13 +229,6 @@ As tabelas se diferenciam dos quadros por não apresentarem os fechamentos later
 = Conclusão (ou considerações finais)
 
 Parte final do texto, na qual se apresentam as conclusões do trabalho acadêmico, usualmente denominada Considerações Finais. Pode ser usada outra denominação similar que indique a conclusão do trabalho.
-
-/*
-  Todos as obras efetivamente citadas 
-  no trabalho deverão constar na lista de referências. 
-  Obras que não constarem citadas 
-  no texto não deverão constar nesta lista.
-*/
 
 #appendix(include "assets/appendix1.typ", [Roteiro de entrevista])
 #appendix(include "assets/appendix2.typ", [Questionário de pesquisa])
