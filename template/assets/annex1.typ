@@ -6,7 +6,7 @@
   align: center,
   columns: (20%, 80%),
 
-  image("../media/br.png", height:  1.3cm , width: 1.2cm), 
+  image("br.png", height:  1.3cm , width: 1.2cm), 
   text(fill: rgb("#949428"), strong[
     Presidência da República \
     Casa Civil \
