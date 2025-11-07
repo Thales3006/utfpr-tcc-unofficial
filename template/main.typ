@@ -113,7 +113,7 @@ Todas as figuras devem ser referenciadas em texto, como feito com a @glandulas n
 #figure(
   image("media/imagem2.png", width: 50%), 
   caption: [Glândulas exócrinas e endócrinas],
-  source: [Adaptado de  #cite(<ross2018>, form: "prose", supplement: [p. 144]) ]
+  source: [Adaptado de  #cite(<ross2018>, form: "prose", supplement: [p.~144]) ]
 )<glandulas>
 
 *Atenção:* As fontes das ilustrações e tabelas também deverão constar na lista de referências, ou indicar como Fonte: Autoria própria (ano), se for o caso.
