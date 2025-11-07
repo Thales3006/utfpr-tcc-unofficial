@@ -268,4 +268,8 @@ Parte final do texto, na qual se apresentam as conclusões do trabalho acadêmic
   no texto não deverão constar nesta lista.
 */
 
+#annex(include "assets/annex1.typ", [Questionário de pesquisa])
+#appendix(include "assets/appendix1.typ", [Roteiro de entrevista])
+#appendix(include "assets/appendix2.typ", [Lei n. 9.610, de 19 de fevereiro de 1998])
+
 #bibliography("references.bib")

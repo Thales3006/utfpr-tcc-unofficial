@@ -1,5 +1,8 @@
 #import "@preview/linguify:0.4.2": *
 
+#let article-appendices-state = state("article-appendices", ())
+#let article-annexes-state = state("article-annexes", ())
+
 #let template(
   title: none,
   title-foreign: none,
@@ -370,6 +373,35 @@ outline(title: [#linguify("outline") \ \ ])
 set page(numbering: "1")
 
 body
+
+
+context if article-appendices-state.final() != () {
+  counter(heading).update(0)
+  for (index,(appendix, name)) in (..article-appendices-state.final()).enumerate() {
+    pagebreak(weak: true)
+    align(center+horizon, heading(level: 2, numbering: none)[
+      #upper(linguify("appendix")) #numbering("A",(index+1)) - #name
+    ])
+    set heading(outlined: false)
+    set figure(outlined: false)
+    appendix
+  }
+}
+
+context if article-annexes-state.final() != () {
+  counter(heading).update(0)
+
+  for (index,(annex, name)) in (..article-annexes-state.final()).enumerate() {
+    pagebreak(weak: true)
+    align(center+horizon, heading(level: 2, numbering: none)[
+      #upper(linguify("annex")) #numbering("A",(index+1)) - #name
+    ])
+    set heading(outlined: false)
+    set figure(outlined: false)
+    annex
+  }
+}
+
 }
 
 #let default_figure = figure
@@ -399,3 +431,16 @@ body
     }),
     ..figure-arguments
   )
+
+
+#let appendix(appendix, name) = context {
+  let current-appendices-state = article-appendices-state.get()
+  current-appendices-state.push((appendix: appendix, name: name))
+  article-appendices-state.update(current-appendices-state)
+}
+
+#let annex(annex, name) = context {
+  let current-annexes-state = article-annexes-state.get()
+  current-annexes-state.push((annex: annex, name: name))
+  article-annexes-state.update(current-annexes-state)
+}

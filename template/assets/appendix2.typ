@@ -1,8 +1,6 @@
 = Roteiro da entrevista
 
-#strong[ROTEIRO DE ENTREVISTA]
-
-1- Identificação Pessoal:
+1- Identificação Pessoal: #line(length: 100%)
 
 Nome:
 
