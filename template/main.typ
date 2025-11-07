@@ -105,7 +105,7 @@ A seguir, um modelo de formatação de figura:
 #figure(
   image("media/imagem1.png", width: 50%), 
   caption: [As dimensões curriculares de pré-escolar],
-  source: [Centro Social de Azurva (2020)]
+  source: [#cite(<azurva2020>, form:"prose")]
 )
 
 Todas as figuras devem ser referenciadas em texto, como feito com a @glandulas nesse trecho escrito.
@@ -113,7 +113,7 @@ Todas as figuras devem ser referenciadas em texto, como feito com a @glandulas n
 #figure(
   image("media/imagem2.png", width: 50%), 
   caption: [Glândulas exócrinas e endócrinas],
-  source: [Adaptado de Ross e Pawlina (2018, p. 144)]
+  source: [Adaptado de  #cite(<ross2018>, form: "prose", supplement: [p. 144]) ]
 )<glandulas>
 
 *Atenção:* As fontes das ilustrações e tabelas também deverão constar na lista de referências, ou indicar como Fonte: Autoria própria (ano), se for o caso.
@@ -148,7 +148,7 @@ A seguir, um modelo de formatação de gráfico:
   }),
 
 caption: [Estatística de empréstimos em janeiro de 2019],
-source: [UTFPR (2019)],
+source: [#cite(<utfpr2020>, form: "prose")],
 )
 
 Modelo de formatação de quadros (prevalecem informações textuais).
@@ -177,7 +177,7 @@ Modelo de formatação de quadros (prevalecem informações textuais).
     [Atitudes que sustentam o comportamento do indivíduo: saber comunicar-se e responsabilizar-se pelos seus atos.],
   ), 
   caption: [Áreas de desenvolvimento de competências],
-  source: [Fleury e Fleury (2018)],
+  source: [ #cite(<fleury2018>, form: "prose")],
 )
 
 == Tabelas
@@ -228,7 +228,7 @@ As tabelas se diferenciam dos quadros por não apresentarem os fechamentos later
   ), 
   caption: [Desempenho dos alunos na prova de conhecimentos específicos],
   note: [As notas (quando houver) deverão ser apresentadas antes da apresentação da fonte.],
-  source: [INEP (2016)],
+  source: [#cite(<inep2016>, form: "prose")],
 )
 
 /* ============================ /*
