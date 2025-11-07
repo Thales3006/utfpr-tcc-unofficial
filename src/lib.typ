@@ -34,6 +34,7 @@
 // ===============================================
 let lang-data = toml("assets/lang.toml")
 set-database(lang-data)
+set text(lang: lang)
 
 // ===============================================
 // Page
@@ -42,6 +43,8 @@ set page(
   margin: (left: 3cm, right: 2cm, top: 3cm, bottom: 2cm),
   number-align: top+right,
 )
+
+{// This stops the tcc formatting leaking to extra content
 
 // ===============================================
 // Normal Text
@@ -52,7 +55,7 @@ set par(
   leading: 1.0em,
   spacing: 1.0em,
 )
-set text(lang: lang, size: 12pt)
+set text(size: 12pt)
 set underline(offset: 0.2em, evade: false, extent: 0.08em)
 
 // ===============================================
@@ -374,14 +377,15 @@ set page(numbering: "1")
 
 body
 
+}// This stops the tcc formatting leaking to extra content
 
 context if article-appendices-state.final() != () {
   counter(heading).update(0)
   for (index,(appendix, name)) in (..article-appendices-state.final()).enumerate() {
-    pagebreak(weak: true)
-    align(center+horizon, heading(level: 2, numbering: none)[
+    set page(numbering: "1",number-align: right+top)
+    page(align(center+horizon, heading(level: 2, numbering: none)[
       #upper(linguify("appendix")) #numbering("A",(index+1)) - #name
-    ])
+    ]))
     set heading(outlined: false)
     set figure(outlined: false)
     appendix
@@ -392,10 +396,10 @@ context if article-annexes-state.final() != () {
   counter(heading).update(0)
 
   for (index,(annex, name)) in (..article-annexes-state.final()).enumerate() {
-    pagebreak(weak: true)
-    align(center+horizon, heading(level: 2, numbering: none)[
+    set page(numbering: "1",number-align: right+top)
+    page(align(center+horizon, heading(level: 2, numbering: none)[
       #upper(linguify("annex")) #numbering("A",(index+1)) - #name
-    ])
+    ]))
     set heading(outlined: false)
     set figure(outlined: false)
     annex

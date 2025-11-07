@@ -1,35 +1,49 @@
-= Roteiro da entrevista
+#align(center)[= Roteiro da entrevista]
+#linebreak()
 
-1- Identificação Pessoal: #line(length: 100%)
+#let full-line = box(align(bottom,line(length: 100%,stroke:0.05em,)),width: 1fr, height: 0.6em)
 
-Nome:
+#set par(spacing: 0.5em)
+#set text(size: 12pt)
 
-D/N:
+1- Identificação Pessoal: 
 
-Nacionalidade:
+Nome: #full-line
 
-Sexo:
+D/N: #full-line
 
-Idade:
+Nacionalidade: #full-line
+
+Sexo: #full-line
+
+Idade: #full-line
+
+\
 
 Outras pessoas que moram na casa:
 
-Informante:
+\ \
 
-2- Encaminhado por:
+Informante: #full-line
 
-Motivo da solicitação:
+2- Encaminhado por: #full-line
 
-3 - Antecedentes Pessoais:
+Motivo da solicitação: #full-line
 
-3.1- Concepção
+\ \
 
-Quanto tempo após o casamento?
+3 - Antecedentes Pessoais: #full-line
 
-Foi desejada?
+3.1- Concepção #full-line
 
-Sexo esperado?
+Quanto tempo após o casamento? #full-line
 
-Abortos anteriores (espontâneos ou provocados e época)
+Foi desejada? #full-line
 
-Observações:
+Sexo esperado? #full-line
+
+Abortos anteriores (espontâneos ou provocados e época) #full-line
+
+Observações: #full-line
+
+#full-line

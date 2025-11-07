@@ -1,37 +1,43 @@
+#set text(size: 8pt)
+#set par(justify: true, leading: 0.5em,spacing: 0.5em)
+#show footnote.entry: set text(size: 12pt)
 
-= Lei n. 9.610, de 19 de fevereiro de 1998
+#grid(
+  align: center,
+  columns: (20%, 80%),
 
-#figure(
-  kind: "law",
-  supplement: "Lei",
-  table(
-    stroke: none,
-    columns: (19.14%, 80.86%), align: (auto, auto,), 
-
-    image(
-      "../media/br.png", height: 0.5236111111111111in, width: 0.47638888888888886in,
-    ), 
-    strong[Presidência da República \
+  image("../media/br.png", height:  1.3cm , width: 1.2cm), 
+  text(fill: rgb("#949428"), strong[
+    Presidência da República \
     Casa Civil \
-    Subchefia para Assuntos Jurídicos],
-  )
+    Subchefia para Assuntos Jurídicos
+  ]),
 )
 
-#strong[LEI Nº 9.610, DE 19 DE FEVEREIRO DE 1998];#footnote[Disponível em: #link("http://www.planalto.gov.br/ccivil_03/leis/l9610.htm");.];#strong[.]
+#align(center)[
+  *LEI Nº 9.610, DE 19 DE FEVEREIRO DE 1998 #footnote[
+    Disponível em: #link("http://www.planalto.gov.br/ccivil_03/leis/l9610.htm").
+  ].*
+]
 
-#figure(
-  align(
-    center,
-  )[#table(
-      columns: (100%), align: (auto,), table.header(
-        [Altera, atualiza e consolida a legislação sobre direitos autorais e dá outras providências.],
-      ), table.hline(),
-    )], kind: table,
-)
+\
 
-#strong[O PRESIDENTE DA REPÚBLICA] Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:
+#align(right,block(
+  width: 50%,
+  inset: 0.2em,
+  align(left,
+  text(fill: rgb("#800000"))[Altera, atualiza e consolida a legislação sobre direitos autorais e dá outras providências.]),
+))
 
-Título I - Disposições Preliminares
+\
+
+*O PRESIDENTE DA REPÚBLICA* Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:
+
+\
+
+#align(center)[Título I - Disposições Preliminares]
+
+\
 
 ~~~~~~~ Art. 1º Esta Lei regula os direitos autorais, entendendo-se sob esta denominação os direitos de autor e os que lhes são conexos.
 
@@ -68,3 +74,25 @@ Título I - Disposições Preliminares
 ~~~~~~~ c) pseudônima - quando o autor se oculta sob nome suposto;
 
 ~~~~~~~ d) inédita - a que não haja sido objeto de publicação;
+
+~~~~~~~ e) póstuma - a que se publique após a morte do autor;
+
+~~~~~~~ f) originária - a criação primígena;
+
+~~~~~~~ g) derivada - a que, constituindo criação intelectual nova, resulta da transformação de obra originária;
+
+~~~~~~~ h) coletiva - a criada por iniciativa, organização e responsabilidade de uma pessoa física ou jurídica, que a publica sob seu nome ou marca e que é constituída pela participação de diferentes autores, cujas contribuições se fundem numa criação autônoma;
+
+~~~~~~~ i) audiovisual - a que resulta da fixação de imagens com ou sem som, que tenha a finalidade de criar, por meio de sua reprodução, a impressão de movimento, independentemente dos processos de sua captação, do suporte usado inicial ou posteriormente para fixá-lo, bem como dos meios utilizados para sua veiculação;
+
+~~~~~~~ IX - fonograma - toda fixação de sons de uma execução ou interpretação ou de outros sons, ou de uma representação de sons que não seja uma fixação incluída em uma obra audiovisual;
+
+~~~~~~~ X - editor - a pessoa física ou jurídica à qual se atribui o direito exclusivo de reprodução da obra e o dever de divulgá-la, nos limites previstos no contrato de edição; 
+
+~~~~~~~ XI - produtor - a pessoa física ou jurídica que toma a iniciativa e tem a responsabilidade econômica da primeira fixação do fonograma ou da obra audiovisual, qualquer que seja a natureza do suporte utilizado;
+
+~~~~~~~ XII - radiodifusão - a transmissão sem fio, inclusive por satélites, de sons ou imagens e sons ou das representações desses, para recepção ao público e a transmissão de sinais codificados, quando os meios de decodificação sejam oferecidos ao público pelo organismo de radiodifusão ou com seu consentimento;
+
+~~~~~~~ XIII - artistas intérpretes ou executantes - todos os atores, cantores, músicos, bailarinos ou outras pessoas que representem um papel, cantem, recitem, declamem, interpretem ou executem em qualquer forma obras literárias ou artísticas ou expressões do folclore.
+
+~~~~~~~ Art. 6º Não serão de domínio da União, dos Estados, do Distrito Federal ou dos Municípios as obras por eles simplesmente subvencionadas.
