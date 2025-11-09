@@ -13,6 +13,7 @@ compiler = "0.14.0"
 exclude = [
   ".git/",
   ".gitignore",
+  ".vscode/",
 ]
 
 [template]
