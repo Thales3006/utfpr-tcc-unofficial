@@ -11,6 +11,10 @@
   UTFPR TCC template made by students for students
 </center>
 
+### Important info
+
+The template content is in portuguese because the target audience is UTFPR students, a brazillian university.
+
 ## Quick start
 
 ```typst
@@ -29,7 +33,10 @@
 
   description: [That little block on the second page.],
 
-  // === OPTIONAL ELEMENTS === //
+  keywords: ([word 1], [word 2], [word 3]),
+  keywords-foreign: ([palavra 1], [palavra 2], [palavra 3]),
+  
+// ↓↓↓ OPTIONAL ELEMENTS ↓↓↓ //
   outline-figure: true,
   outline-table: true,
   abbreviations: (
@@ -40,12 +47,13 @@
     [UTFPR], [Universidade Tecnológica Federal do Paraná],
   ),
   symbols: (
-    [Ca], [Cálcio],
-    [Mg], [Magnésio], 
-    [T], [Temperatura],
-    [V], [Voluma], 
-    [P], [Pressão],
+    [Ca], [Calcium],
+    [Mg], [Magnesium], 
+    [T], [Temperature],
+    [V], [Volume], 
+    [P], [Pressure],
   ),
+// ↑↑↑ OPTIONAL ELEMENTS ↑↑↑ //
 )
 ```
 
@@ -57,6 +65,21 @@ Be aware that this is an unofficial template, prone to errors.
 It's an open source project designed for anyone that wants to contribute
 be able to, especially if the standard gets updated, 
 some feature is incorrect or missing.
+
+## Additional Functions
+
+This template contains additional functions for specific content that can or should be used in your document:
+
+- `#abstract[content]` for the abstract.
+
+- `#abstract-foreign[content]` for the abstract in a foreign language.
+
+- `#dedication[content]` for the dedication.
+
+- `#acknowledgments[content]` for the acknowledgments.
+
+- `#epigraph(attribution: [@citation])[content]` for the epigraph.
+
 
 ---
 
@@ -86,12 +109,10 @@ Todos os argumentos abaixo possuem valores padrão, portanto, opcionais.
 
   description: [Aquele pequeno bloco na contra-capa.],
 
-  keywords: ([palavra 1], [palavra 2], [palavra 3], [palavra 4]),
-  keywords-foreign: ([word 1], [word 2], [word 3], [word 4]),
+  keywords: ([palavra 1], [palavra 2], [palavra 3]),
+  keywords-foreign: ([word 1], [word 2], [word 3]),
   
-  abstract: [resumo],
-  abstract-foreign: [seu resumo na linguagem estrangeira],
-
+// ↓↓↓ ELEMENTOS OPCIONAIS ↓↓↓ //
   outline-figure: true,
   outline-table: true,
   abbreviations: (
@@ -101,6 +122,14 @@ Todos os argumentos abaixo possuem valores padrão, portanto, opcionais.
     [NBR], [Normas Brasileiras], 
     [UTFPR], [Universidade Tecnológica Federal do Paraná],
   ),
+  symbols: (
+    [Ca], [Cálcio],
+    [Mg], [Magnésio], 
+    [T], [Temperatura],
+    [V], [Voluma], 
+    [P], [Pressão],
+  ),
+// ↑↑↑ ELEMENTOS OPCIONAIS ↑↑↑ //
 )
 ```
 
@@ -112,3 +141,18 @@ Este é um modelo não oficial, sujeito a erros.
 Trata-se de um projeto de código aberto, criado para que qualquer pessoa que 
 deseje contribuir possa fazê-lo, especialmente se o padrão for atualizado,
 alguma funcionalidade estiver incorreta ou ausente.
+
+## Funções adicionais
+
+Essa template contém funções adicionais para conteúdos específicos
+que podem ou devem ser usados no seu documento:
+
+- `#abstract[ content ]` para o resumo.
+
+- `#abstract-foreign[ content ]` para o resumo em língua estrangeira.
+
+- `#dedication[ content ]` para a dedicação.
+
+- `#acknowledgments[ content ]` para os agradecimentos.
+
+- `#epigraph(attribution: [@citacao])[ content ]` para o epígrafo.

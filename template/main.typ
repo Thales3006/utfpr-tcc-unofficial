@@ -26,7 +26,7 @@
   keywords: ([palavra 1], [palavra 2], [palavra 3], [palavra 4]),
   keywords-foreign: ([word 1], [word 2], [word 3], [word 4]),
 
-  // === OPTIONAL ELEMENTS === //
+// ↓↓↓ ELEMENTOS OPCIONAIS ↓↓↓ //
   outline-figure: true,
   outline-table: true,
   abbreviations: (
@@ -43,6 +43,7 @@
     [V], [Voluma], 
     [P], [Pressão],
   ),
+// ↑↑↑ ELEMENTOS OPCIONAIS ↑↑↑ //
 )
 
 #abstract[
@@ -53,7 +54,7 @@
   Seguir o mesmo padrão do resumo, com a tradução do texto do resumo e referência, se houver, para a língua estrangeira.
 ]
 
-// === OPTIONALS ELEMENTS === //
+// ↓↓↓ ELEMENTOS OPCIONAIS ↓↓↓ //
 #dedication[
   Dedico este trabalho à minha família, pelos momentos de ausência.
 ]
@@ -70,7 +71,7 @@
 ]
 
 #epigraph(attribution: [@candido2002formacao])[A biblioteca é um jardim onde as ideias florescem e os frutos são colhidos pela eternidade.]
-// === OPTIONALS ELEMENTS === //
+// ↑↑↑ ELEMENTOS OPCIONAIS ↑↑↑ //
 
 = Introdução
 
