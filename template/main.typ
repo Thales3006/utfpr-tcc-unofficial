@@ -16,12 +16,7 @@
   year: [ANO DA ENTREGA],
 
   description: [
-      Trabalho de conclusão de curso de 
-      graduação/Dissertação/Tese apresentada 
-      como requisito para obtenção do título de 
-      Bacharel/Licenciado/Tecnólogo/Mestre/Doutor 
-      em Nome do Curso/Programa da 
-      Universidade Tecnológica Federal do Paraná (UTFPR).
+      Trabalho de conclusão de curso de graduação/Dissertação/Tese apresentada como requisito para obtenção do título de Bacharel/Licenciado/Tecnólogo/Mestre/Doutor em Nome do Curso/Programa da Universidade Tecnológica Federal do Paraná (UTFPR).
     
       Orientador(a): Nome completo e por extenso.
 
@@ -51,27 +46,14 @@
 )
 
 #abstract[
-  O resumo deve ressaltar de forma sucinta
-  o conteúdo do trabalho, incluindo 
-  justificativa, objetivos, metodologia, 
-  resultados e conclusão. 
-  Deve ser redigido em um único parágrafo, 
-  contendo de 150 até 500 palavras.
-  Evitar incluir citações, fórmulas, equações 
-  e símbolos no resumo. 
-  As palavras-chave e as _keywords_ são 
-  grafadas em inicial minúscula quando não
-  forem nome próprio ou nome científico e 
-  separados por ponto e vírgula.
+  O resumo deve ressaltar de forma sucinta o conteúdo do trabalho, incluindo justificativa, objetivos, metodologia, resultados e conclusão. Deve ser redigido em um único parágrafo, contendo de 150 até 500 palavras.Evitar incluir citações, fórmulas, equações e símbolos no resumo. As palavras-chave e as _keywords_ são grafadas em inicial minúscula quando nãoforem nome próprio ou nome científico e separados por ponto e vírgula.
 ]
 
 #abstract-foreign[
-  Seguir o mesmo padrão do resumo, 
-  com a tradução do texto do resumo e 
-  referência, se houver, 
-  para a língua estrangeira.
+  Seguir o mesmo padrão do resumo, com a tradução do texto do resumo e referência, se houver, para a língua estrangeira.
 ]
 
+// === OPTIONALS ELEMENTS === //
 #dedication[
   Dedico este trabalho à minha família, pelos momentos de ausência.
 ]
@@ -88,6 +70,7 @@
 ]
 
 #epigraph(attribution: [@candido2002formacao])[A biblioteca é um jardim onde as ideias florescem e os frutos são colhidos pela eternidade.]
+// === OPTIONALS ELEMENTS === //
 
 = Introdução
 
