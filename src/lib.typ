@@ -2,6 +2,9 @@
 
 #let abstract-state = state("abstract", none)
 #let abstract-foreign-state = state("abstract-foreign", none)
+#let acknowledgments-state = state("acknowledgments", none)
+#let epigraph-state = state("epigraph", none)
+#let dedication-state = state("dedication", none)
 #let appendices-state = state("article-appendices", ())
 #let annexes-state = state("article-annexes", ())
 
@@ -31,188 +34,17 @@
 ) = {
   
 // ===============================================
-// Languages Settings
+// Global Settings
 // ===============================================
 let lang-data = toml("assets/lang.toml")
 set-database(lang-data)
 set text(lang: lang)
+set page(number-align: top+right)
 
-// ===============================================
-// Page
-// ===============================================
-set page(
-  margin: (left: 3cm, right: 2cm, top: 3cm, bottom: 2cm),
-  number-align: top+right,
-)
+{// This stops the tcc formatting leaking to extra content (annex, apendix, etc)
 
-{// This stops the tcc formatting leaking to extra content
-
-// ===============================================
-// Normal Text
-// ===============================================
-set par(
-  justify: true, 
-  first-line-indent: (amount: 1.5cm, all: true),
-  leading: 1.0em,
-  spacing: 1.0em,
-)
-set text(size: 12pt)
-set underline(offset: 0.2em, evade: false, extent: 0.08em)
-
-// ===============================================
-// Headings
-// ===============================================
-set heading(numbering: "1.1")
-show heading : it =>{
-  set text(
-    size:12pt,
-    weight: if it.level < 3 {700} else {0}
-  )
-  if it.level == 1 {pagebreak();upper(it)}
-  else if it.level == 4 {underline(it)}
-  else if it.level == 5 {emph(it)}
-  else {it}
-}
-
-// ===============================================
-// Figures
-// ===============================================
-set figure.caption(position: top,separator: " - ")
-show figure: set text(size: 10pt)
-show figure.caption: set text(size: 10pt, weight: 700)
-show figure.caption: set par(spacing: 0.5em, leading: 0.5em)
-
-show figure.where(kind: "photograph"): set figure(supplement: linguify("photograph"))
-show figure.where(kind: "graph"): set figure(supplement: linguify("graph"))
-show figure.where(kind: "frame"): set figure(supplement: linguify("frame"))
-
-
-// ===============================================
-// Tables
-// ===============================================
-set table(stroke: 0.5pt)
-set table.header(repeat: true)
-
-show figure.where(kind:table) : it => {
-  set block(breakable: true)
-  set table(
-    stroke: (_, y) => (
-       top: if y <= 1 { 0.5pt } else { 0pt },
-       bottom: 0.5pt,
-      ),
-    align: (x, y) => (
-      if y == 0 or x != 0 { center }
-      else { left }
-    )
-  )
-  let header-args(children, cols) = arguments(
-    ..children.map(c => {
-      let c_fields = c.fields()
-      let body = c_fields.remove("body")
-      table.cell(
-        ..c_fields,
-        body,
-        stroke: ( bottom: 0.5pt),
-      )
-    }),
-  )
-
-  show table: it => {
-    let fields = it.fields()
-  
-    if fields.at("label", default: none) == <table-show-recursion-stop> {
-      it
-    } else {
-      let children = fields.remove("children")
-      if children.at(0).func() == table.header {
-        children.at(0) = table.header(
-          ..header-args(children.at(0).children, fields.columns.len()),
-        )
-      }
-      if children.at(-1).func() == table.footer {
-        children.at(-1) = table.footer(
-          ..header-args(children.at(-1).children, fields.columns.len()),
-        )
-      }
-      [#table(..fields, ..children) <table-show-recursion-stop>]
-    }
-  }
-  
-  it
-}
-// ===============================================
-// Outlines
-// ===============================================
-
-set outline(indent: 0cm)
-show outline: it => {
-  show heading: set align(center)
-  it
-}
-show outline.entry: it => {
-  if it.element.func() == heading{link(
-    it.element.location(),
-    grid(columns: (10%,auto), it.prefix(),it.inner()),
-  )}
-  else {link(
-    it.element.location(),
-    it.prefix()+[ \- ]+it.inner()+[\ ],
-  )}
-}
-show outline.entry: it => {
-  set text(weight: 700)
-   if it.element.func() == heading {
-      set text(
-        size:12pt,
-        weight: if it.level < 3 {700} else {0}
-      )
-      if it.level == 1 {upper(it)}
-      else if it.level == 4 {underline(it)}
-      else if it.level == 5 {emph(it)}
-      else {it}
-    }else {it}
-}
-
-// ===============================================
-// Citations
-// ===============================================
-
-set cite(style: "associacao-brasileira-de-normas-tecnicas")
-set bibliography(
-  title: none, 
-  style: "associacao-brasileira-de-normas-tecnicas",
-)
-show bibliography: it => {
-  align(heading(linguify("bibliography")),center)
-  linebreak()
-  set par(leading: 0.5em)
-  it
-}
-
-// ===============================================
-// Quotation
-// ===============================================
-
-show quote.where(block: true): it => {
-  set text(size: 10pt)
-  set par(
-    leading: 0.5em, 
-    first-line-indent: (amount:4cm, all:true),
-    hanging-indent: 4cm
-  )
-
-  if it.attribution == none {
-    panic("Block quotes need attribution parameter to not be none")
-  }
-  par(it.body + [ ] + it.attribution + ".")
-}
-
-// ===============================================
-// Lists
-// ===============================================
-
-set list(indent: 1.25cm)
-set enum(indent: 1.25cm)
+import "style.typ" : *
+show: formatting
 
 // ===============================================
 // Project Content
@@ -222,15 +54,10 @@ page(numbering: none)[
   
   #grid(
     rows: 1fr,
-
     strong(upper(linguify("university"))),
-    
     strong(upper(author)),
-
     align(horizon, strong(upper(title))),
-  
     [],
-  
     align(bottom, strong(upper[#city \ #year])),
   )
 ]
@@ -240,7 +67,7 @@ page(numbering: none)[
   
   #grid(
     rows: 1fr,
-  
+
     strong(upper(author)),
     [],
     grid(
@@ -259,7 +86,48 @@ page(numbering: none)[
   )
 ]
 
-context { 
+context {
+
+
+if dedication-state.final() != none{
+  set par(leading: 0.5em)
+  grid(
+    rows: (4fr,1fr),
+    columns: (1fr,1fr),
+    align:right+bottom,
+    [],
+    dedication-state.final(),
+    [],
+    [],
+  )
+}
+
+if acknowledgments-state.final() != none{
+  
+  page[
+    #align(center, 
+      strong(upper(linguify("acknowledgments")))
+    )
+    #linebreak()
+    #set par(first-line-indent: (amount: 1.25cm, all:true))
+    #acknowledgments-state.final()
+  ]
+}
+
+if epigraph-state.final() != none{
+  set par(leading: 0.5em)
+  let epigraph = epigraph-state.final()
+  grid(
+    rows: (4fr,1fr),
+    columns: (1fr,1fr),
+    align:right+bottom,
+    [],
+      smartquote()+epigraph.content+smartquote()+[ ]+epigraph.attribution+[.],
+    [],
+    [],
+  )
+}
+
 page(numbering: none)[
   #align(center, strong(upper(linguify("abstract")))) \
 
@@ -355,7 +223,6 @@ if outline-table {
   )
 }
 
-
 if abbreviations != none {
   set align(left)
   align(center, heading(outlined: false, numbering: none)[
@@ -448,6 +315,31 @@ context if annexes-state.final() != () {
     }),
     ..figure-arguments
   )
+
+
+#let acknowledgments(content) = context {
+  if acknowledgments-state.get() != none {
+    panic("Only one acknowledgment can be defined by document")
+  }
+  acknowledgments-state.update(content)
+}
+
+#let epigraph(content, attribution: none) = context {
+  if epigraph-state.get() != none {
+    panic("Only one epigraph can be defined by document")
+  }
+  if attribution == none {
+    panic("Please, specify a attribution. Example: epigraph( attribution: [@author2020])[Phrase...]")
+  }
+  epigraph-state.update((content:content, attribution:attribution))
+}
+
+#let dedication(content) = context {
+  if dedication-state.get() != none {
+    panic("Only one dedication can be defined by document")
+  }
+  dedication-state.update(content)
+}
 
 #let abstract(content) = context {
   if abstract-state.get() != none {

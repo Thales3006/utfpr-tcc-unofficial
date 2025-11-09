@@ -72,6 +72,25 @@
   para a língua estrangeira.
 ]
 
+#dedication[
+  Dedico este trabalho à minha família, pelos momentos de ausência.
+]
+
+#acknowledgments[
+  Certamente estes parágrafos não irão atender a todas as pessoas que fizeram parte dessa importante fase de minha vida. Portanto, desde já peço desculpas àquelas que não estão presentes entre essas palavras, mas elas podem estar certas que fazem parte do meu pensamento e de minha gratidão.
+
+  Agradeço ao(a) meu(minha) orientador(a) Prof.(a) Dr.(a) Nome Completo, pela sabedoria com que me guiou nesta trajetória.
+  Aos meus colegas de sala.
+
+  A Secretaria do Curso, pela cooperação.
+
+  Gostaria de deixar registrado também, o meu reconhecimento à minha família, pois acredito que sem o apoio deles seria muito difícil vencer esse desafio.
+
+  O presente trabalho foi realizado com apoio da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Código de Financiamento 001. 
+]
+
+#epigraph(attribution: [@candido2002formacao])[A biblioteca é um jardim onde as ideias florescem e os frutos são colhidos pela eternidade.]
+
 = Introdução
 
 Parte inicial do texto, na qual devem constar o tema e a delimitação do assunto tratado, objetivos da pesquisa e outros elementos necessários para situar o tema do trabalho. 
@@ -227,7 +246,7 @@ As tabelas se diferenciam dos quadros por não apresentarem os fechamentos later
 
 - Citação direta curta: o autor lembra, contudo, a análise precursora de #cite(<leonardbarton1998>, form: "prose", supplement: [p.~48]) sobre alguns “aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas”.
 
-- Citação direta curta: o autor lembra, contudo, a análise precursora sobre alguns #quote[ aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas] @leonardbarton1998.
+- Citação direta curta: o autor lembra, contudo, a análise precursora sobre alguns #quote(attribution: [@leonardbarton1998])[ aspectos limitantes das competências, ou aptidões, essenciais, que as transformam em limitações estratégicas].
 
 - Citação direta longa (com mais de 3 linhas).
 
