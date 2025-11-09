@@ -307,24 +307,24 @@ context if annexes-state.final() != () {
 
 }
 
-#let default_figure = figure
+#let _default_figure = figure
 #let figure( 
   body,
   source: none,
   note: none,
   ..figure-arguments
-) = default_figure(
+) = _default_figure(
     block(body + {
       set par(spacing: 0.5em, leading: 0.5em)
       pad(y:-0.5em)[]
       if note!=none{ 
-        default_figure.caption(
+        _default_figure.caption(
           linguify("note") + ": " + note, 
           position: bottom
         )
       }
       if source!=none{
-        default_figure.caption(
+        _default_figure.caption(
           linguify("source") + ": " + source, 
           position: bottom
         )
