@@ -126,23 +126,19 @@ A seguir, um modelo de formatação de fotografia:
 
 A seguir, um modelo de formatação de gráfico:
 
-//===============================
-// Bibliotecas de geração de gráfico
-#import "@preview/cetz:0.3.2"
-#import "@preview/cetz-plot:0.1.1"
-#import cetz.draw: *
-#import cetz-plot: *
-//===============================
-
 #figure(
   kind: "graph",
-
+{
+  import "@preview/cetz:0.3.2"
+  import "@preview/cetz-plot:0.1.1"
+  import cetz.draw: *
+  import cetz-plot: *
   cetz.canvas({chart.piechart( 
     (17, 12, 25),
     radius: 2.5,
     slice-style: (gray, blue, orange),
     inner-label: (content: "%",))
-  }),
+  })},
 
 caption: [Estatística de empréstimos em janeiro de 2019],
 source: [#cite(<utfpr2020>, form: "prose")],
