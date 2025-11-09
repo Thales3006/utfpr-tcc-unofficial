@@ -93,7 +93,7 @@
 
 = Introdução
 
-Parte inicial do texto, na qual devem constar o tema e a delimitação do assunto tratado, objetivos da pesquisa e outros elementos necessários para situar o tema do trabalho. 
+Parte inicial do texto, na qual devem constar o tema e a delimitação do assunto tratado, objetivos da pesquisa e outros elementos necessários para situar o tema do trabalho.
 
 /*
 Após o início de uma seção, recomenda-se a inserção de um texto ou, no mínimo, uma nota explicativa sobre a seção iniciada. Evitar colocar outra seção na sequência, por exemplo:
@@ -102,10 +102,6 @@ Após o início de uma seção, recomenda-se a inserção de um texto ou, no mí
 = Contextualização
 = Memorial da pesquisa
 */
-
-= Seção primária (caixa alta e negrito)
-
-As seções primárias devem iniciar *sempre* em páginas distintas. Entre uma seção e outra sempre haverá um texto.
 
 == Seção secundária (negrito)
 #lorem(20)
@@ -118,6 +114,8 @@ As seções primárias devem iniciar *sempre* em páginas distintas. Entre uma s
 
 ===== Seção quinária (itálico)
 #lorem(20)
+
+
 
 = Desenvolvimento
 
@@ -139,7 +137,7 @@ A seguir, um modelo de formatação de fotografia:
 
 #figure(
   kind: "photograph",
-  image("media/imagem3.png", width: 50%), 
+  image("media/imagem2.png", width: 50%), 
   caption: [Entrada da antiga Biblioteca da UTFPR Campus Ponta Grossa],
   source:[Autoria própria (2014)],
 )
