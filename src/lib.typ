@@ -55,10 +55,10 @@ if city == none {
 if year == none {
   panic("Year was not found, please specify your year. Example: `year: [2036]`")
 }
-if abstract-state.final() == none {
+context if abstract-state.final() == none {
   panic("Abstract was not found, please specify your abstract. Example: `#abstract[example...]`")
 }
-if abstract-foreign-state.final() == none {
+context if abstract-foreign-state.final() == none {
   panic("Foreign abstract was not found, please specify your foreign abstract. Example: `#abstract-foreign[example...]`")
 }
 if keywords == none {
