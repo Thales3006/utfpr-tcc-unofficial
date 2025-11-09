@@ -51,14 +51,23 @@ show figure.where(kind: "photograph"): set figure(supplement: linguify("photogra
 show figure.where(kind: "graph"): set figure(supplement: linguify("graph"))
 show figure.where(kind: "frame"): set figure(supplement: linguify("frame"))
 
+// ===============================================
+// Frames
+// ===============================================
+
+show figure.where(kind:"frame") : it => {
+  set table(stroke: 0.5pt)
+  set block(breakable: true)
+  it  
+}
 
 // ===============================================
 // Tables
 // ===============================================
-set table(stroke: 0.5pt)
-set table.header(repeat: true)
 
 show figure.where(kind:table) : it => {
+  set table(stroke: 0.5pt)
+  set table.header(repeat: true)
   set block(breakable: true)
   set table(
     stroke: (_, y) => (
@@ -108,7 +117,6 @@ show figure.where(kind:table) : it => {
 // ===============================================
 // Outlines
 // ===============================================
-
 set outline(indent: 0cm)
 show outline: it => {
   show heading: set align(center)
