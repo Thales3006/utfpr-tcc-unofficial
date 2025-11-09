@@ -1,7 +1,9 @@
 #import "@preview/linguify:0.4.2": *
 
-#let article-appendices-state = state("article-appendices", ())
-#let article-annexes-state = state("article-annexes", ())
+#let abstract-state = state("abstract", none)
+#let abstract-foreign-state = state("abstract-foreign", none)
+#let appendices-state = state("article-appendices", ())
+#let annexes-state = state("article-annexes", ())
 
 #let template(
   title: none,
@@ -16,15 +18,14 @@
   keywords: none,
   keywords-foreign: none,
   
-  abstract: none,
-  abstract-foreign: none,
-  
   lang: "pt",
   lang-foreign: "en",
 
   outline-figure: false,
   outline-table: false,
+
   abbreviations: none,
+  symbols: none,
   
   body,
 ) = {
@@ -242,86 +243,88 @@ page(numbering: none)[
   
     strong(upper(author)),
     [],
-  
     grid(
       rows: 1fr,
       align: center,
-    strong(upper(title)),
-  
-    //O título do trabalho constante na capa, na folha de rosto e na folha de aprovação deve ser idêntico ao registrado no Sistema Acadêmico
-  
-    strong(title-foreign),
+      strong(upper(title)),
+      strong(title-foreign),
     ),
-    
     align(right, block(width: 50%)[
       #set  align(left)
       #set par(first-line-indent: 0cm, spacing: 0.5em,leading: 0.5em)
       \
       #text(size: 10pt, description)
     ]),
-    
     align(bottom, strong(upper[#city \ #year])),
   )
 ]
 
-if abstract != none or keywords != none{ 
-  page(numbering: none)[
-    //De acordo com a NBR 6028:2021, a apresentação gráfica deve seguir o padrão do documento no qual o resumo está inserido. Para definição das palavras-chave (e suas correspondentes em inglês no #emph[abstract];) consultar em Termo tópico do #strong[Catálogo de] #strong[Autoridades] da Biblioteca Nacional, disponível em: #link("http://acervo.bn.gov.br/sophia_web/autoridade")
-    #align(center, strong(upper(linguify("abstract")))) \
-  
-    #set par(
-      justify: true, 
-      first-line-indent: 0cm,
-      leading: 0.5em,
-      spacing: 1.5em,
-    )
-  
-    #abstract
+context { 
+page(numbering: none)[
+  #align(center, strong(upper(linguify("abstract")))) \
 
-    #if keywords != none {
-      [Palavras-chave: ]
-      for keyword in keywords {
-        if keyword != keywords.at(keywords.len()-1){
-          keyword + [; ]
-        } else{
-          keyword + [.]
-        }
+  #set par(
+    justify: true, 
+    first-line-indent: 0cm,
+    leading: 0.5em,
+    spacing: 1.5em,
+  )
+  
+  #if abstract-state.final() != none{
+    abstract-state.final()
+  } else {
+    panic("Abstract was not found, please specify your abstract. Example: `#abstract[example...]`")
+  }
+
+  #if keywords != none {
+    parbreak()
+    linguify("keywords")+[: ]
+    for keyword in keywords {
+      if keyword != keywords.at(keywords.len()-1){
+        keyword + [; ]
+      } else{
+        keyword + [.]
       }
     }
-  ]
-}
+  } else {
+    panic("Please specify keywords as template parameter. Example: `keywords: ([word 1], [word 2], [word 3]),`")
+  }
+]
 
-if abstract-foreign != none or keywords-foreign != none { 
-  page(numbering: none)[
-    #align(center, strong(upper(
-      linguify("abstract",lang: lang-foreign)
-    ))) \
-    
-    #set par(
-      justify: true, 
-      first-line-indent: 0cm,
-      leading: 0.5em,
-      spacing: 1.5em,
-    )
+page(numbering: none)[
+  #align(center, strong(upper(
+    linguify("abstract",lang: lang-foreign)
+  ))) \
   
-    #abstract-foreign
+  #set par(
+    justify: true, 
+    first-line-indent: 0cm,
+    leading: 0.5em,
+    spacing: 1.5em,
+  )
 
-    #if keywords-foreign != none {
-      [Keywords: ] 
-      for keyword in keywords-foreign {
-        if keyword != keywords-foreign.at(keywords-foreign.len()-1){
-          keyword + [; ]
-        } else{
-          keyword + [.]
-        }
+  #if abstract-foreign-state.final() != none {
+    abstract-foreign-state.final()
+  } else {
+    panic("Foreign abstract was not found, please specify your abstract. Example: `#abstract-foreign[example...]`")
+  }
+  #if keywords-foreign != none {
+    parbreak()
+    linguify("keywords", lang: lang-foreign)+[: ]
+    for keyword in keywords-foreign {
+      if keyword != keywords-foreign.at(keywords-foreign.len()-1){
+        keyword + [; ]
+      } else{
+        keyword + [.]
       }
     }
-  ]
+  } else {
+    panic("Please specify foreign keywords as template parameter. Example: `keywords-foreign: ([word 1], [word 2], [word 3]),`")
+  }
+]
 }
 
 if outline-figure {
-  //Elemento opcional. São ilustrações: figuras, fotografias, gráficos, quadros, entre outros. Organizá-la por ordem de ocorrência no texto. Na UTFPR sugere-se adotar listas próprias, conforme a natureza da ilustração, a partir da existência de 3 itens da mesma espécie.
-
   set par(
     justify: true, 
     first-line-indent: 0cm,
@@ -340,8 +343,6 @@ if outline-figure {
 }
 
 if outline-table {
-  //Elemento opcional. As tabelas se diferenciam dos quadros por apresentaram, predominantemente, informações numéricas (sem os fechamentos laterais), enquanto os quadros apresentam, predominantemente, informações textuais (com os fechamentos laterais). Deve ser apresentada em lista própria, de acordo com a ordem no texto, com cada item designado por seu nome específico, acompanhado do respectivo número da página.
-
   set par(
       justify: true, 
       first-line-indent: 0cm,
@@ -356,8 +357,6 @@ if outline-table {
 
 
 if abbreviations != none {
-  //Elemento opcional. Relação em ordem alfabética das abreviaturas e siglas presentes no texto, seguidas do respectivo significado
-
   set align(left)
   align(center, heading(outlined: false, numbering: none)[
     #linguify("abbreviations") \ \
@@ -366,8 +365,22 @@ if abbreviations != none {
   grid(
     columns: (15.48%, 84.52%), 
     align: (auto, auto,), 
-    row-gutter: 5pt,
+    row-gutter: 0.7776em,
     ..abbreviations
+  )
+}
+
+if symbols != none {
+  set align(left)
+  align(center, heading(outlined: false, numbering: none)[
+    #linguify("symbols") \ \
+  ])
+  
+  grid(
+    columns: (15.48%, 84.52%), 
+    align: (auto, auto,), 
+    row-gutter: 0.7776em,
+    ..symbols
   )
 }
 
@@ -379,9 +392,9 @@ body
 
 }// This stops the tcc formatting leaking to extra content
 
-context if article-appendices-state.final() != () {
+context if appendices-state.final() != () {
   counter(heading).update(0)
-  for (index,(appendix, name)) in (..article-appendices-state.final()).enumerate() {
+  for (index,(appendix, name)) in (..appendices-state.final()).enumerate() {
     set page(numbering: "1",number-align: right+top)
     page(align(center+horizon, heading(level: 2, numbering: none)[
       #upper(linguify("appendix")) #numbering("A",(index+1)) - #name
@@ -392,10 +405,10 @@ context if article-appendices-state.final() != () {
   }
 }
 
-context if article-annexes-state.final() != () {
+context if annexes-state.final() != () {
   counter(heading).update(0)
 
-  for (index,(annex, name)) in (..article-annexes-state.final()).enumerate() {
+  for (index,(annex, name)) in (..annexes-state.final()).enumerate() {
     set page(numbering: "1",number-align: right+top)
     page(align(center+horizon, heading(level: 2, numbering: none)[
       #upper(linguify("annex")) #numbering("A",(index+1)) - #name
@@ -436,15 +449,29 @@ context if article-annexes-state.final() != () {
     ..figure-arguments
   )
 
+#let abstract(content) = context {
+  if abstract-state.get() != none {
+    panic("Only one abstract can be defined by document")
+  }
+  abstract-state.update(content)
+}
+
+#let abstract-foreign(content) = context {
+  if abstract-foreign-state.get() != none {
+    panic("Only one abstract can be defined by document")
+  }
+  abstract-foreign-state.update(content)
+}
+
 
 #let appendix(appendix, name) = context {
-  let current-appendices-state = article-appendices-state.get()
+  let current-appendices-state = appendices-state.get()
   current-appendices-state.push((appendix: appendix, name: name))
-  article-appendices-state.update(current-appendices-state)
+  appendices-state.update(current-appendices-state)
 }
 
 #let annex(annex, name) = context {
-  let current-annexes-state = article-annexes-state.get()
+  let current-annexes-state = annexes-state.get()
   current-annexes-state.push((annex: annex, name: name))
-  article-annexes-state.update(current-annexes-state)
+  annexes-state.update(current-annexes-state)
 }

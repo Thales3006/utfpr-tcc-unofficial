@@ -30,28 +30,8 @@
 
   keywords: ([palavra 1], [palavra 2], [palavra 3], [palavra 4]),
   keywords-foreign: ([word 1], [word 2], [word 3], [word 4]),
-  
-  abstract: [
-    O resumo deve ressaltar de forma sucinta
-    o conteúdo do trabalho, incluindo 
-    justificativa, objetivos, metodologia, 
-    resultados e conclusão. 
-    Deve ser redigido em um único parágrafo, 
-    contendo de 150 até 500 palavras.
-    Evitar incluir citações, fórmulas, equações 
-    e símbolos no resumo. 
-    As palavras-chave e as _keywords_ são 
-    grafadas em inicial minúscula quando não
-    forem nome próprio ou nome científico e 
-    separados por ponto e vírgula.
-  ],
-  abstract-foreign: [
-    Seguir o mesmo padrão do resumo, 
-    com a tradução do texto do resumo e 
-    referência, se houver, 
-    para a língua estrangeira.
-  ],
 
+  // === OPTIONAL ELEMENTS === //
   outline-figure: true,
   outline-table: true,
   abbreviations: (
@@ -61,7 +41,36 @@
     [NBR], [Normas Brasileiras], 
     [UTFPR], [Universidade Tecnológica Federal do Paraná],
   ),
+  symbols: (
+    [Ca], [Cálcio],
+    [Mg], [Magnésio], 
+    [T], [Temperatura],
+    [V], [Voluma], 
+    [P], [Pressão],
+  ),
 )
+
+#abstract[
+  O resumo deve ressaltar de forma sucinta
+  o conteúdo do trabalho, incluindo 
+  justificativa, objetivos, metodologia, 
+  resultados e conclusão. 
+  Deve ser redigido em um único parágrafo, 
+  contendo de 150 até 500 palavras.
+  Evitar incluir citações, fórmulas, equações 
+  e símbolos no resumo. 
+  As palavras-chave e as _keywords_ são 
+  grafadas em inicial minúscula quando não
+  forem nome próprio ou nome científico e 
+  separados por ponto e vírgula.
+]
+
+#abstract-foreign[
+  Seguir o mesmo padrão do resumo, 
+  com a tradução do texto do resumo e 
+  referência, se houver, 
+  para a língua estrangeira.
+]
 
 = Introdução
 
