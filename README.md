@@ -126,7 +126,7 @@ Todos os argumentos abaixo possuem valores padrão, portanto, opcionais.
     [Ca], [Cálcio],
     [Mg], [Magnésio], 
     [T], [Temperatura],
-    [V], [Voluma], 
+    [V], [Volume], 
     [P], [Pressão],
   ),
 // ↑↑↑ ELEMENTOS OPCIONAIS ↑↑↑ //
