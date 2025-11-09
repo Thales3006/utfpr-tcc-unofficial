@@ -32,6 +32,41 @@
   
   body,
 ) = {
+
+// ===============================================
+// Input Validation
+// ===============================================
+
+if title == none {
+  panic("Title was not found, please specify your title. Example: `title: [My title]`")
+}
+if title-foreign == none {
+  panic("Foreign title was not found, please specify your foreign title. Example: `title-foreign: [My foreign title]`")
+}
+if author == none {
+  panic("Author was not found, please specify your author. Example: `author: [Generic Student da Silva]`")
+}
+if description == none {
+  panic("Description was not found, please specify your description. Example: `description: [The little block on the second page]`")
+}
+if city == none {
+  panic("City was not found, please specify your city. Example: `city: [Curitiba]`")
+}
+if year == none {
+  panic("Year was not found, please specify your year. Example: `year: [2036]`")
+}
+if abstract-state.final() == none {
+  panic("Abstract was not found, please specify your abstract. Example: `#abstract[example...]`")
+}
+if abstract-foreign-state.final() == none {
+  panic("Foreign abstract was not found, please specify your foreign abstract. Example: `#abstract-foreign[example...]`")
+}
+if keywords == none {
+  panic("Please specify keywords as template parameter. Example: `keywords: ([word 1], [word 2], [word 3]),`")
+}
+if keywords-foreign == none {
+  panic("Please specify foreign keywords as template parameter. Example: `keywords-foreign: ([word 1], [word 2], [word 3]),`")
+}
   
 // ===============================================
 // Global Settings
@@ -88,7 +123,6 @@ page(numbering: none)[
 
 context {
 
-
 if dedication-state.final() != none{
   set par(leading: 0.5em)
   grid(
@@ -138,24 +172,16 @@ page(numbering: none)[
     spacing: 1.5em,
   )
   
-  #if abstract-state.final() != none{
-    abstract-state.final()
-  } else {
-    panic("Abstract was not found, please specify your abstract. Example: `#abstract[example...]`")
-  }
+  #abstract-state.final()
 
-  #if keywords != none {
-    parbreak()
-    linguify("keywords")+[: ]
-    for keyword in keywords {
-      if keyword != keywords.at(keywords.len()-1){
-        keyword + [; ]
-      } else{
-        keyword + [.]
-      }
+  #parbreak()
+  #linguify("keywords")+[: ]
+  #for keyword in keywords {
+    if keyword != keywords.at(keywords.len()-1){
+      keyword + [; ]
+    } else{
+      keyword + [.]
     }
-  } else {
-    panic("Please specify keywords as template parameter. Example: `keywords: ([word 1], [word 2], [word 3]),`")
   }
 ]
 
@@ -171,23 +197,16 @@ page(numbering: none)[
     spacing: 1.5em,
   )
 
-  #if abstract-foreign-state.final() != none {
-    abstract-foreign-state.final()
-  } else {
-    panic("Foreign abstract was not found, please specify your abstract. Example: `#abstract-foreign[example...]`")
-  }
-  #if keywords-foreign != none {
-    parbreak()
-    linguify("keywords", lang: lang-foreign)+[: ]
-    for keyword in keywords-foreign {
-      if keyword != keywords-foreign.at(keywords-foreign.len()-1){
-        keyword + [; ]
-      } else{
-        keyword + [.]
-      }
+  #abstract-foreign-state.final()
+  
+  #parbreak()
+  #linguify("keywords", lang: lang-foreign)+[: ]
+  #for keyword in keywords-foreign {
+    if keyword != keywords-foreign.at(keywords-foreign.len()-1){
+      keyword + [; ]
+    } else{
+      keyword + [.]
     }
-  } else {
-    panic("Please specify foreign keywords as template parameter. Example: `keywords-foreign: ([word 1], [word 2], [word 3]),`")
   }
 ]
 }
