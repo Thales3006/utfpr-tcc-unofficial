@@ -13,8 +13,6 @@
 
 ## Quick start
 
-All the arguments below have default values, hence, optionals.
-
 ```typst
 #import "@local/utfpr-tcc-unofficial:0.1.0": * 
 
@@ -31,12 +29,7 @@ All the arguments below have default values, hence, optionals.
 
   description: [That little block on the second page.],
 
-  keywords: ([word 1], [word 2], [word 3], [word 4]),
-  keywords-foreign: ([palavra 1], [palavra 2], [palavra 3], [palavra 4]),
-  
-  abstract: [abstract],
-  abstract-foreign: [your abstract in the foreign language],
-
+  // === OPTIONAL ELEMENTS === //
   outline-figure: true,
   outline-table: true,
   abbreviations: (
@@ -45,6 +38,13 @@ All the arguments below have default values, hence, optionals.
     [IBGE], [Instituto Brasileiro de Geografia e Estatística],
     [NBR], [Normas Brasileiras], 
     [UTFPR], [Universidade Tecnológica Federal do Paraná],
+  ),
+  symbols: (
+    [Ca], [Cálcio],
+    [Mg], [Magnésio], 
+    [T], [Temperatura],
+    [V], [Voluma], 
+    [P], [Pressão],
   ),
 )
 ```
