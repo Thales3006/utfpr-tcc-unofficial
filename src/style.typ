@@ -72,7 +72,7 @@ show figure.where(kind:table) : it => {
   set block(breakable: true)
   set table(
     stroke: (_, y) => (
-       top: if y <= 1 { 0.5pt } else { 0pt },
+       top: if y < 1 { 0.5pt } else { 0pt },
        bottom: 0.5pt,
       ),
     align: (x, y) => (
@@ -80,14 +80,14 @@ show figure.where(kind:table) : it => {
       else { left }
     )
   )
-  let header-args(children, cols) = arguments(
+  let header-args(children) = (
     ..children.map(c => {
       let c_fields = c.fields()
       let body = c_fields.remove("body")
       table.cell(
         ..c_fields,
         body,
-        stroke: ( bottom: 0.5pt),
+        stroke: ( bottom: 0.5pt, top: 0.5pt),
       )
     }),
   )
@@ -95,20 +95,42 @@ show figure.where(kind:table) : it => {
   show table: it => {
     let fields = it.fields()
   
-    if fields.at("label", default: none) == <table-show-recursion-stop> {
-      it
-    } else {
+    if fields.at("label", default: none) == <table-show-recursion-stop> { it } else {
       let children = fields.remove("children")
+
+      let header-elem = ()
+      let index-list = ()
+      for (index, child) in children.enumerate() {
+        if child.func() == table.header {
+          header-elem.push(children.at(index).children)
+          index-list.push(index)
+        }
+      }
+      for i in index-list { if i != 0{
+          children.at(i)=[] // avoids linter problem
+          children.remove(i)
+      }}
+      
+      {
+        let new = ()
+        for (i, h) in header-elem.enumerate() {
+          if i == 0 {
+            new.push(h)
+          } else {
+            new.push(header-args(h))
+          }
+        }
+        header-elem = new
+      }
+      let final-args = ()
+      for elem in header-elem{for e in elem {
+        final-args.push(e)
+      }}
+
       if children.at(0).func() == table.header {
-        children.at(0) = table.header(
-          ..header-args(children.at(0).children, fields.columns.len()),
-        )
+        children.at(0) = table.header(..final-args)
       }
-      if children.at(-1).func() == table.footer {
-        children.at(-1) = table.footer(
-          ..header-args(children.at(-1).children, fields.columns.len()),
-        )
-      }
+
       [#table(..fields, ..children) <table-show-recursion-stop>]
     }
   }

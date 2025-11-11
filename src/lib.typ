@@ -314,26 +314,58 @@ context if annexes-state.final() != () {
   note: none,
   ..figure-arguments
 ) = _default_figure(
-    block(body + {
-      set par(spacing: 0.5em, leading: 0.5em)
-      pad(y:-0.25em)[]
-      if note!=none{ 
-        _default_figure.caption(
-          linguify("note") + ": " + note, 
-          position: bottom
-        )
-      }
-      if source!=none{
-        _default_figure.caption(
-          linguify("source") + ": " + source, 
-          position: bottom
-        )
-      } else {
-        panic("Every figure needs a source. Try using `source: [your source (year)]` in the parameters")
-      }
-    }),
-    ..figure-arguments
+  block(body + {
+    set par(spacing: 0.5em, leading: 0.5em)
+    pad(y:-0.25em)[]
+    if note!=none{ 
+      _default_figure.caption(
+        linguify("note") + ": " + note, 
+        position: bottom
+      )
+    }
+    if source!=none{
+      _default_figure.caption(
+        linguify("source") + ": " + source, 
+        position: bottom
+      )
+    } else {
+      panic("Every figure needs a source. Try using `source: [your source (year)]` in the parameters")
+    }
+  }),
+  ..figure-arguments
+)
+
+#let _default_table = table
+#let abnt-table(..table-args) =  _default_table(inset: 0em, gutter: 0em, stroke: none, fill:none, context{
+  let columns = table-args.named().at("columns", default: 1)
+  let column-amount = if type(columns) == int {
+    columns
+  } else if type(columns) == array {
+    columns.len()
+  } else { 1 }
+
+  let table-counter = counter("table")
+  table-counter.step()
+
+  let table-part = counter("table-part" + str(table-counter.get().first()))
+  show <_multi-page-table-header>: it => {table-part.step(); it}
+
+  show <_table-continue-header>: cont => if table-part.get().first() == 1 and table-part.final().first() != 1 {cont}
+  show <_table-continuation-header>: cont => if table-part.get().first() != 1 and table-part.get().first() != table-part.final().first() {cont}
+  show <_table-conclusion-header>: conclusion => if table-part.get().first() == table-part.final().first() and table-part.final().first() != 1 {conclusion}
+
+  _default_table(
+    _default_table.header(
+      _default_table.cell(colspan: column-amount, stroke: none, 
+      align(right,text(size: 10pt, weight: 700)[#[
+        (continua)<_table-continue-header>
+        (continuação)<_table-continuation-header>
+        (conclusão)<_table-conclusion-header>
+      ]<_multi-page-table-header>]))
+    ),
+    ..table-args,
   )
+})
 
 
 #let acknowledgments(content) = context {

@@ -198,7 +198,7 @@ Para orientações gerais sobre a formatação de tabelas, consulte: IBGE (Insti
 ]
 
 #figure(
-  table(
+  abnt-table(
     columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
 
     table.header(
@@ -212,6 +212,11 @@ Para orientações gerais sobre a formatação de tabelas, consulte: IBGE (Insti
       [concluintes], 
       [ingressantes],
     ),
+    
+    [Matemática],          [27,8], [22,5], [27,1], [22,4], 
+    [Letras],              [32,3], [31,5], [30,9], [26,5], 
+    [Geografia],           [38,4], [34,2], [34,6], [29,5], 
+    [Ciências Biológicas], [26,4], [23,6], [26,6], [21,9],
     [Matemática],          [27,8], [22,5], [27,1], [22,4], 
     [Letras],              [32,3], [31,5], [30,9], [26,5], 
     [Geografia],           [38,4], [34,2], [34,6], [29,5], 
