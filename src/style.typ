@@ -44,8 +44,9 @@ show heading : it =>{
 // ===============================================
 set figure.caption(position: top,separator: " - ")
 show figure: set text(size: 10pt)
+show figure: set par(spacing: 0.5em, leading: 0.5em)
 show figure.caption: set text(size: 10pt, weight: 700)
-show figure.caption: set par(spacing: 0.5em, leading: 0.5em)
+
 
 show figure.where(kind: "photograph"): set figure(supplement: linguify("photograph"))
 show figure.where(kind: "graph"): set figure(supplement: linguify("graph"))
@@ -182,9 +183,10 @@ show quote.where(block: true): it => {
 
 show quote.where(block: false): it => {
   if it.attribution == none {
-    panic("Block quotes need attribution parameter to not be none")
-  }
+    it
+  } else {
   it+[ ]+it.attribution
+  }
 }
 
 // ===============================================
