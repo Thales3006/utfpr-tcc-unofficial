@@ -197,7 +197,8 @@ As tabelas distinguem-se dos quadros por não possuírem linhas de fechamento na
 Para orientações gerais sobre a formatação de tabelas, consulte: IBGE (Instituto Brasileiro de Geografia e Estatística). Normas de Apresentação Tabular. 3ª ed. Rio de Janeiro: IBGE, 1993. Disponível em: #link("http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf")
 ]
 
-// AVISO: use abnt-table ao criar tabelas para ter uma melhor experiencia na template
+// AVISO: use `#abnt-table()` ao criar tabelas para ter uma melhor experiencia
+// Use apenas um header por tabela
 #figure(
   abnt-table(
     columns: (2fr, 1fr, 1fr, 1fr, 1fr), 
