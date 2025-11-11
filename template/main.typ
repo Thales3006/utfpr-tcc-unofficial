@@ -188,7 +188,7 @@ A seguir, ilustra-se um modelo de formatação de quadros (prevalecem informaç�
     [Atitudes que sustentam o comportamento do indivíduo: saber comunicar-se e responsabilizar-se pelos seus atos.],
   ), 
   caption: [Campos de desenvolvimento de habilidades],
-  source: [ Fluery e Fleury #cite(<fleury2018>, form: "prose")],
+  source: [ Fluery e Fleury (#cite(<fleury2018>, form: "year"))],
 )
 
 == Tabelas
