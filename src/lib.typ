@@ -175,7 +175,7 @@ page(numbering: none)[
   #abstract-state.final()
 
   #parbreak()
-  #linguify("keywords")+[: ]
+  #linguify("keywords"): 
   #for keyword in keywords {
     if keyword != keywords.at(keywords.len()-1){
       keyword + [; ]
@@ -200,7 +200,7 @@ page(numbering: none)[
   #abstract-foreign-state.final()
   
   #parbreak()
-  #linguify("keywords", lang: lang-foreign)+[: ]
+  #linguify("keywords", lang: lang-foreign): 
   #for keyword in keywords-foreign {
     if keyword != keywords-foreign.at(keywords-foreign.len()-1){
       keyword + [; ]
@@ -316,7 +316,7 @@ context if annexes-state.final() != () {
 ) = _default_figure(
     block(body + {
       set par(spacing: 0.5em, leading: 0.5em)
-      pad(y:-0.5em)[]
+      pad(y:-0.25em)[]
       if note!=none{ 
         _default_figure.caption(
           linguify("note") + ": " + note, 
