@@ -75,10 +75,6 @@ show figure.where(kind:table) : it => {
        top: if y < 1 { 0.5pt } else { 0pt },
        bottom: 0.5pt,
       ),
-    align: (x, y) => (
-      if y == 0 or x != 0 { center }
-      else { left }
-    )
   )
   let header-args(children) = (
     ..children.map(c => {

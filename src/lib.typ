@@ -353,15 +353,17 @@ context if annexes-state.final() != () {
   show <_table-continue-header>: cont => if table-part.get().first() == 1 and table-part.final().first() != 1 {cont}
   show <_table-continuation-header>: cont => if table-part.get().first() != 1 and table-part.get().first() != table-part.final().first() {cont}
   show <_table-conclusion-header>: conclusion => if table-part.get().first() == table-part.final().first() and table-part.final().first() != 1 {conclusion}
-
+  
+  v(-1em)
   _default_table(
     _default_table.header(
       _default_table.cell(colspan: column-amount, stroke: none, 
-      align(right,text(size: 10pt, weight: 700)[#[
+      align(right,pad(x:-2%,
+        text(size: 10pt, weight: 700)[#[
         (continua)<_table-continue-header>
         (continuação)<_table-continuation-header>
         (conclusão)<_table-conclusion-header>
-      ]<_multi-page-table-header>]))
+      ]<_multi-page-table-header>])))
     ),
     ..table-args,
   )

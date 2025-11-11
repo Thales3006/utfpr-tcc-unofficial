@@ -129,8 +129,8 @@ A seguir, vemos um modelo de formatação de fotografia:
 #figure(
   kind: "photograph",
   image("media/imagem2.png", width: 50%), 
-  caption: [Entrada da antiga Biblioteca da UTFPR Campus Ponta Grossa],
-  source:[Autoria própria (2014)],
+  caption: [Entrada da UTFPR Campus Ponta Grossa],
+  source:[Autoria própria (2025)],
 )
 
 A seguir, no @grafico, um modelo de formatação de gráfico:
@@ -197,46 +197,51 @@ As tabelas distinguem-se dos quadros por não possuírem linhas de fechamento na
 Para orientações gerais sobre a formatação de tabelas, consulte: IBGE (Instituto Brasileiro de Geografia e Estatística). Normas de Apresentação Tabular. 3ª ed. Rio de Janeiro: IBGE, 1993. Disponível em: #link("http://biblioteca.ibge.gov.br/visualizacao/livros/liv23907.pdf")
 ]
 
+// AVISO: use abnt-table ao criar tabelas para ter uma melhor experiencia na template
 #figure(
   abnt-table(
-    columns: (1fr, 1fr, 1fr, 1fr, 1fr), 
+    columns: (2fr, 1fr, 1fr, 1fr, 1fr), 
 
     table.header(
-      [Média], 
-      table.cell(colspan: 2)[CEFET],
-      table.cell(colspan: 2)[BRASIL],
+      [*Média*], 
+      table.cell(colspan: 2)[*CEFET*],
+      table.cell(colspan: 2)[*BRASIL*],
       
-      [Curso], 
+      table.cell(align: left)[Curso], 
       [concluintes], 
       [ingressantes], 
       [concluintes], 
       [ingressantes],
     ),
     
-    [Matemática],          [27,8], [22,5], [27,1], [22,4], 
-    [Letras],              [32,3], [31,5], [30,9], [26,5], 
-    [Geografia],           [38,4], [34,2], [34,6], [29,5], 
-    [Ciências Biológicas], [26,4], [23,6], [26,6], [21,9],
-    [Matemática],          [27,8], [22,5], [27,1], [22,4], 
-    [Letras],              [32,3], [31,5], [30,9], [26,5], 
-    [Geografia],           [38,4], [34,2], [34,6], [29,5], 
-    [Ciências Biológicas], [26,4], [23,6], [26,6], [21,9],
+    table.cell(align: left)[Matemática],
+    [27,8], [22,5], [27,1], [22,4], 
+
+    table.cell(align: left)[Letras],
+    [32,3], [31,5], [30,9], [26,5], 
+
+    table.cell(align: left)[Geografia],
+    [38,4], [34,2], [34,6], [29,5], 
+
+    table.cell(align: left)[Ciências Biológicas],
+    [26,4], [23,6], [26,6], [21,9],
+
+    table.cell(align: left)[Matemática],
+    [27,8], [22,5], [27,1], [22,4], 
+
+    table.cell(align: left)[Letras],
+    [32,3], [31,5], [30,9], [26,5], 
+
+    table.cell(align: left)[Geografia],
+    [38,4], [34,2], [34,6], [29,5], 
+
+    table.cell(align: left)[Ciências Biológicas],
+    [26,4], [23,6], [26,6], [21,9],
   ), 
   caption: [Desempenho de estudantes em conhecimentos específicos],
   note: [As notas (quando existirem) devem ser exibidas antes da indicação da fonte de origem.],
   source: [#cite(<inep2016>, form: "prose")],
 )
-
-/* ============================ /*
-  WORK IN PROGRESS:
-    Para tabelas que ocupam mais de uma folha: 
-    deve-se repetir a legenda, 
-    na primeira parte não apresentar a linha de
-    fechamento e inserir as sinalizações: 
-    continua, 
-    continuação (quando ocupar mais de 2 folhas)
-    e conclusão.
-*/ ============================ */
 
 == Citações
 É fundamental nesta etapa a ética e a honestidade intelectual, atribuindo autoria a quem realmente contribuiu para o desenvolvimento do estudo em questão. 
