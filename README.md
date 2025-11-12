@@ -18,7 +18,7 @@ The template content is in portuguese because the target audience is UTFPR stude
 ## Quick start
 
 ```typst
-#import "@local/utfpr-tcc-unofficial:0.1.0": * 
+#import "@preview/utfpr-tcc-unofficial:0.1.0": * 
 
 #show: template.with(  
   title: [the title],
@@ -91,10 +91,8 @@ This template contains additional functions for specific content that can or sho
 
 ## Início rápido
 
-Todos os argumentos abaixo possuem valores padrão, portanto, opcionais.
-
 ```typst
-#import "@local/utfpr-tcc-unofficial:0.1.0": * 
+#import "@preview/utfpr-tcc-unofficial:0.1.0": * 
 
 #show: template.with(  
   title: [título],
